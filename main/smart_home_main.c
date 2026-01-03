@@ -1,0 +1,291 @@
+/*
+ * Smart Home Light Switch Application
+ * ESP32 with 3 LEDs, 3 Buttons (2-way switch), DHT11 sensor
+ * WiFi + MQTT communication
+ */
+
+#include <stdio.h>
+#include <string.h>
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include "esp_log.h"
+#include "nvs_flash.h"
+
+// Components
+#include "wifi_manager.h"
+#include "mqtt_app.h"
+#include "led_controller.h"
+#include "dht11_sensor.h"
+#include "button_handler.h"
+#include "smart_home_config.h"
+
+static const char *TAG = "SmartHome";
+
+// Flag to prevent echo loop when processing MQTT messages
+static bool s_processing_mqtt_message = false;
+
+// Forward declarations
+static void subscribe_to_topics(void);
+static void on_mqtt_connected(void);
+
+// ===== Callback Functions =====
+
+/**
+ * @brief WiFi connected callback
+ */
+static void on_wifi_connected(void)
+{
+    ESP_LOGI(TAG, "=== WiFi Connected ===");
+    
+    // Start MQTT client after WiFi is connected
+    mqtt_app_start();
+    
+    // Wait a bit for MQTT connection
+    vTaskDelay(pdMS_TO_TICKS(1500));
+    
+    // Re-subscribe to topics when reconnected
+    subscribe_to_topics();
+}
+
+/**
+ * @brief WiFi disconnected callback
+ */
+static void on_wifi_disconnected(void)
+{
+    ESP_LOGW(TAG, "=== WiFi Disconnected ===");
+    mqtt_app_stop();
+}
+
+/**
+ * @brief LED state change callback
+ */
+static void on_led_state_changed(int led_id, bool state)
+{
+    ESP_LOGI(TAG, "LED %d state changed to: %s", led_id, state ? "ON" : "OFF");
+
+    // Only publish if NOT processing MQTT message (avoid echo loop)
+    if (!s_processing_mqtt_message && mqtt_app_is_connected()) {
+        char device_msg[128];
+        snprintf(device_msg, sizeof(device_msg),
+                "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
+                led_controller_get_state(0),
+                led_controller_get_state(1),
+                led_controller_get_state(2));
+        mqtt_app_publish(MQTT_TOPIC_DEVICE, device_msg, MQTT_QOS, 0);
+        ESP_LOGI(TAG, "Device state published on LED change: %s", device_msg);
+    } else if (s_processing_mqtt_message) {
+        ESP_LOGD(TAG, "Skipping publish (processing MQTT message)");
+    }
+}
+
+/**
+ * @brief Button press callback (2-way switch mechanism)
+ */
+static void on_button_pressed(int button_id)
+{
+    ESP_LOGI(TAG, "Button %d pressed - Toggling LED %d", button_id, button_id);
+    
+    // Toggle corresponding LED
+    led_controller_toggle(button_id);
+}
+
+/**
+ * @brief DHT11 reading callback
+ */
+static void on_dht11_reading(float temperature, float humidity)
+{
+    ESP_LOGI(TAG, "DHT11 - Temperature: %.1f°C, Humidity: %.1f%%", 
+            temperature, humidity);
+    
+    // Publish sensor data to MQTT as JSON
+    if (mqtt_app_is_connected()) {
+        char status_msg[128];
+        snprintf(status_msg, sizeof(status_msg),
+                "{\"temperature\":%.1f,\"humidity\":%.1f}",
+                temperature, humidity);
+        mqtt_app_publish(MQTT_TOPIC_STATUS, status_msg, MQTT_QOS, 0);
+        ESP_LOGI(TAG, "Sensor status published: %s", status_msg);
+    }
+}
+
+/**
+ * @brief Subscribe to all MQTT topics
+ */
+static void subscribe_to_topics(void)
+{
+    if (mqtt_app_is_connected()) {
+        ESP_LOGI(TAG, "Subscribing to MQTT topics...");
+        mqtt_app_subscribe(MQTT_TOPIC_DEVICE, MQTT_QOS);
+    }
+}
+
+static void on_mqtt_connected(void)
+{
+    ESP_LOGI(TAG, "MQTT connected callback - subscribing");
+    subscribe_to_topics();
+}
+
+/**
+ * @brief MQTT message received callback
+ * Handles JSON messages on device topic: {"led1":0/1, "led2":0/1, "led3":0/1}
+ */
+static void on_mqtt_message(const char *topic, const char *data, int data_len)
+{
+    ESP_LOGI(TAG, "MQTT Message - Topic: %s, Data: %.*s (len=%d)", topic, data_len, data, data_len);
+    
+    // Handle device control commands (JSON format)
+    if (strcmp(topic, MQTT_TOPIC_DEVICE) == 0) {
+        // Set flag to prevent echo loop
+        s_processing_mqtt_message = true;
+        
+        // Parse JSON: {"led1":0/1, "led2":0/1, "led3":0/1}
+        char json_buf[256] = {0};
+        int copy_len = (data_len < (int)sizeof(json_buf) - 1) ? data_len : (int)sizeof(json_buf) - 1;
+        memcpy(json_buf, data, copy_len);
+        json_buf[copy_len] = '\0';
+        
+        // Simple JSON parsing for led1, led2, led3
+        char *ptr = json_buf;
+        for (int led_id = 0; led_id < 3; led_id++) {
+            char led_key[16];
+            snprintf(led_key, sizeof(led_key), "\"led%d\":", led_id + 1);
+            
+            char *led_pos = strstr(ptr, led_key);
+            if (led_pos) {
+                led_pos += strlen(led_key);
+                // Skip whitespace
+                while (*led_pos == ' ' || *led_pos == '\t') led_pos++;
+                
+                int target_state = (*led_pos == '1') ? 1 : 0;
+                int current_state = led_controller_get_state(led_id);
+                
+                // Only change if different to avoid unnecessary operations
+                if (target_state != current_state) {
+                    if (target_state) {
+                        ESP_LOGI(TAG, "MQTT: Turning ON LED %d", led_id + 1);
+                        led_controller_turn_on(led_id);
+                    } else {
+                        ESP_LOGI(TAG, "MQTT: Turning OFF LED %d", led_id + 1);
+                        led_controller_turn_off(led_id);
+                    }
+                }
+            }
+        }
+        
+        // Clear flag after processing
+        s_processing_mqtt_message = false;
+    } else {
+        ESP_LOGW(TAG, "Message received on unknown topic: %s", topic);
+    }
+}
+
+/**
+ * @brief Device reporting task - publishes LED states every 2 minutes
+ */
+static void device_report_task(void *arg)
+{
+    char device_msg[128];
+    
+    while (1) {
+        // Wait 2 minutes (120000 ms)
+        vTaskDelay(pdMS_TO_TICKS(120000));
+        
+        if (mqtt_app_is_connected()) {
+            // Build device message
+            snprintf(device_msg, sizeof(device_msg),
+                    "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
+                    led_controller_get_state(0),
+                    led_controller_get_state(1),
+                    led_controller_get_state(2));
+            
+            mqtt_app_publish(MQTT_TOPIC_DEVICE, device_msg, MQTT_QOS, 0);
+            ESP_LOGI(TAG, "Device state periodic publish: %s", device_msg);
+        }
+    }
+}
+
+/**
+ * @brief Main application entry point
+ */
+void app_main(void)
+{
+    ESP_LOGI(TAG, "==========================================================");
+    ESP_LOGI(TAG, "        Smart Home Light Switch - ESP32");
+    ESP_LOGI(TAG, "==========================================================");
+    
+    // Initialize NVS
+    esp_err_t ret = nvs_flash_init();
+    if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
+        ESP_ERROR_CHECK(nvs_flash_erase());
+        ret = nvs_flash_init();
+    }
+    ESP_ERROR_CHECK(ret);
+    
+    // ===== Initialize Components =====
+    
+    // 1. LED Controller
+    ESP_LOGI(TAG, "Initializing LED Controller...");
+    gpio_num_t led_pins[NUM_LEDS] = {LED1_GPIO, LED2_GPIO, LED3_GPIO};
+    ESP_ERROR_CHECK(led_controller_init(led_pins, NUM_LEDS, on_led_state_changed));
+    
+    // 2. Button Handler
+    ESP_LOGI(TAG, "Initializing Button Handler...");
+    gpio_num_t button_pins[NUM_BUTTONS] = {BUTTON1_GPIO, BUTTON2_GPIO, BUTTON3_GPIO};
+    ESP_ERROR_CHECK(button_handler_init(button_pins, NUM_BUTTONS, 
+                                       on_button_pressed, BUTTON_DEBOUNCE_MS));
+    
+    // 3. DHT11 Sensor
+    ESP_LOGI(TAG, "Initializing DHT11 Sensor...");
+    ESP_ERROR_CHECK(dht11_sensor_init(DHT11_GPIO, on_dht11_reading));
+    ESP_ERROR_CHECK(dht11_sensor_start_periodic(DHT11_READ_INTERVAL_MS));
+    
+    // 4. WiFi Manager
+    ESP_LOGI(TAG, "Initializing WiFi Manager...");
+    ESP_ERROR_CHECK(wifi_manager_init(WIFI_SSID, WIFI_PASSWORD, 
+                                     on_wifi_connected, on_wifi_disconnected));
+    ESP_ERROR_CHECK(wifi_manager_start());
+    
+    // 5. MQTT App
+    ESP_LOGI(TAG, "Initializing MQTT App...");
+    ESP_ERROR_CHECK(mqtt_app_init(MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USE_TLS,
+                                  MQTT_USERNAME, MQTT_PASSWORD,
+                                  MQTT_CLIENT_ID, on_mqtt_message));
+
+    // Register MQTT connected callback to re-subscribe on reconnect
+    mqtt_app_set_connected_cb(on_mqtt_connected);
+    
+    // Wait a bit for WiFi connection
+    vTaskDelay(pdMS_TO_TICKS(3000));
+    
+    // Start MQTT if WiFi is already connected
+    if (wifi_manager_is_connected() && !mqtt_app_is_connected()) {
+        ESP_LOGI(TAG, "WiFi already connected, starting MQTT...");
+        mqtt_app_start();
+        vTaskDelay(pdMS_TO_TICKS(2000));  // Wait for MQTT connection
+    }
+    
+    // Subscribe to LED control topics
+    subscribe_to_topics();
+    
+    // Start device reporting task (every 2 minutes)
+    xTaskCreate(device_report_task, "device_task", 3072, NULL, 5, NULL);
+    
+    ESP_LOGI(TAG, "==========================================================");
+    ESP_LOGI(TAG, "        Smart Home System Started Successfully!");
+    ESP_LOGI(TAG, "==========================================================");
+    ESP_LOGI(TAG, "WiFi SSID: %s", WIFI_SSID);
+    ESP_LOGI(TAG, "MQTT Broker: %s:%d (TLS: %s)", MQTT_BROKER_HOST, MQTT_BROKER_PORT, 
+             MQTT_USE_TLS ? "Yes" : "No");
+    ESP_LOGI(TAG, "LED GPIOs: %d, %d, %d", LED1_GPIO, LED2_GPIO, LED3_GPIO);
+    ESP_LOGI(TAG, "Button GPIOs: %d, %d, %d", BUTTON1_GPIO, BUTTON2_GPIO, BUTTON3_GPIO);
+    ESP_LOGI(TAG, "DHT11 GPIO: %d", DHT11_GPIO);
+    ESP_LOGI(TAG, "==========================================================");
+    
+    // Demo: Blink all LEDs once
+    ESP_LOGI(TAG, "Running LED test...");
+    led_controller_all_on();
+    vTaskDelay(pdMS_TO_TICKS(500));
+    led_controller_all_off();
+    
+    ESP_LOGI(TAG, "System ready. Press buttons to control LEDs!");
+}
