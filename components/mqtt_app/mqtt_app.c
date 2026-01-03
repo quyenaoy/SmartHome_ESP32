@@ -28,8 +28,9 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
         break;
         
     case MQTT_EVENT_DISCONNECTED:
-        ESP_LOGW(TAG, "MQTT disconnected from broker");
+        ESP_LOGW(TAG, "MQTT disconnected from broker - will auto-reconnect");
         s_is_connected = false;
+        // ESP-IDF MQTT client will automatically reconnect
         break;
         
     case MQTT_EVENT_SUBSCRIBED:
@@ -67,8 +68,11 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
     case MQTT_EVENT_ERROR:
         ESP_LOGE(TAG, "MQTT error event");
         if (event->error_handle->error_type == MQTT_ERROR_TYPE_TCP_TRANSPORT) {
-            ESP_LOGE(TAG, "TCP transport error");
+            ESP_LOGE(TAG, "TCP transport error - reconnecting...");
+        } else if (event->error_handle->error_type == MQTT_ERROR_TYPE_CONNECTION_REFUSED) {
+            ESP_LOGE(TAG, "Connection refused - check credentials");
         }
+        // Client will auto-reconnect after error
         break;
         
     default:
@@ -91,6 +95,9 @@ esp_err_t mqtt_app_init(const char *broker_host, int broker_port, bool use_tls,
     esp_mqtt_client_config_t mqtt_cfg = {
         .broker.address.uri = broker_uri,
         .credentials.client_id = client_id,
+        .network.disable_auto_reconnect = false,  // Enable auto-reconnect
+        .network.reconnect_timeout_ms = 10000,    // Retry every 10 seconds
+        .network.timeout_ms = 10000,              // Connection timeout
     };
     
     // Configure TLS settings if enabled
@@ -131,15 +138,16 @@ void mqtt_app_set_connected_cb(mqtt_connected_cb_t cb)
 esp_err_t mqtt_app_start(void)
 {
     if (s_mqtt_client == NULL) {
-        ESP_LOGE(TAG, "MQTT client not initialized");
+        ESP_LOGE(TAG, "MQTT client not initialized - call mqtt_app_init first!");
         return ESP_FAIL;
     }
     
+    ESP_LOGI(TAG, "Starting MQTT client connection...");
     esp_err_t ret = esp_mqtt_client_start(s_mqtt_client);
     if (ret == ESP_OK) {
-        ESP_LOGI(TAG, "MQTT app started");
+        ESP_LOGI(TAG, "MQTT app start command sent successfully");
     } else {
-        ESP_LOGE(TAG, "Failed to start MQTT app");
+        ESP_LOGE(TAG, "Failed to start MQTT app: %s", esp_err_to_name(ret));
     }
     
     return ret;

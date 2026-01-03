@@ -3,9 +3,9 @@
 
 #include "driver/gpio.h"
 
-// ===== WiFi Configuration =====
-#define WIFI_SSID           "Tân Mai - 2.4G"
-#define WIFI_PASSWORD       "25051968"
+// ===== WiFi Provisioning =====
+// WiFi credentials will be provided via provisioning portal (SoftAP + HTTP) and stored in NVS.
+// AP SSID (for provisioning) is configured inside wifi_manager (default: "ESP32-Setup").
 
 // ===== MQTT Configuration =====
 #define MQTT_BROKER_HOST    "5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud"

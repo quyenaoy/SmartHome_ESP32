@@ -1,0 +1,194 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+ERN_RESET),ot01 SPI_FAST_FLAHBO)0�������: 0,SPW:xe
+clk_drv:0x0,_r:x0,d_drv:0x0,c0dr:x0,hd_drv0x00,pdv000
+mode:DIO,clc i:
+load:0x3ff��b�:�t u 8 2016 00225rt0x1 (POWRON_EE)bo:0x17 (PI_FS_LS_OOT)
+onfigsp ,SIP:0xe
+clk_r:x0qdv:0x00,ddrv00,s|��:000,hd_dv00����0x00
+moeDO lc div:2
+lad03f03,len:638
+ho0ti 2room 4
+load04080,len:5916
+od0400400len:3860
+nr x008638
+[0;32mI (28) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (28) boot: compile time Jan  3 2026 23:15:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=33820h (210976) map[0m
+[0;32mI (160) esp_image: segment 1: paddr=00043848 vaddr=3ffb0000 size=03f1ch ( 16156) load[0m
+[0;32mI (166) esp_image: segment 2: paddr=0004776c vaddr=40080000 size=088ach ( 34988) load[0m
+[0;32mI (180) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=a8e3ch (691772) map[0m
+[0;32mI (416) esp_image: segment 4: paddr=000f8e64 vaddr=400888ac size=0f9d4h ( 63956) load[0m
+[0;32mI (441) esp_image: segment 5: paddr=00108840 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (453) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (454) boot: Disabling RNG early entropy source...[0m
+[0;32mI (464) cpu_start: Multicore app[0m
+[0;32mI (472) cpu_start: Pro cpu start user code[0m
+[0;32mI (472) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (473) app_init: Application information:[0m
+[0;32mI (473) app_init: Project name:     smart_home[0m
+[0;32mI (477) app_init: App version:      dd50c01-dirty[0m
+[0;32mI (481) app_init: Compile time:     Jan  4 2026 00:13:33[0m
+[0;32mI (486) app_init: ELF file SHA256:  9c25d6a41...[0m
+[0;32mI (491) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (495) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (499) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (503) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (507) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (513) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (518) heap_init: At 3FFB8748 len 000278B8 (158 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (529) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 40098280 len 00007D80 (31 KiB): IRAM[0m
+[0;32mI (541) spi_flash: detected chip: generic[0m
+[0;32mI (543) spi_flash: flash io: dio[0m
+[0;33mW (546) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (559) main_task: Started on CPU0[0m
+[0;32mI (569) main_task: Calling app_main()[0m
+[0;32mI (569) SmartHome: ==========================================================[0m
+[0;32mI (569) SmartHome:         Smart Home Light Switch - ESP32[0m
+[0;32mI (569) SmartHome: ==========================================================[0m
+[0;32mI (619) SmartHome: Initializing LED Controller...[0m
+[0;32mI (619) LED_Controller: LED 0 initialized on GPIO 25[0m
+[0;32mI (619) LED_Controller: LED 1 initialized on GPIO 26[0m
+[0;32mI (619) LED_Controller: LED 2 initialized on GPIO 27[0m
+[0;32mI (619) LED_Controller: LED controller initialized with 3 LEDs[0m
+[0;32mI (629) SmartHome: Initializing Button Handler...[0m
+[0;32mI (629) Button_Handler: Button 0 initialized on GPIO 32[0m
+[1;31mE (639) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (649) Button_Handler: Button 1 initialized on GPIO 33[0m
+[1;31mE (649) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (659) Button_Handler: Button 2 initialized on GPIO 13[0m
+[0;32mI (659) Button_Handler: Button handler initialized with 3 buttons (debounce: 50 ms)[0m
+[0;32mI (669) SmartHome: Initializing DHT11 Sensor...[0m
+[0;32mI (669) DHT11_Sensor: DHT11 sensor initialized on GPIO 4[0m
+[1;31mE (699) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (699) DHT11_Sensor: Started periodic reading every 300000 ms[0m
+[0;32mI (699) SmartHome: Initializing WiFi Manager (provisioning capable)...[0m
+[0;32mI (719) wifi:wifi driver task: 3ffc26f4, prio:23, stack:6656, core=0[0m
+[0;32mI (739) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (739) wifi:wifi certification version: v7.0[0m
+[0;32mI (739) wifi:config NVS flash: enabled[0m
+[0;32mI (739) wifi:config nano formatting: disabled[0m
+[0;32mI (739) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (749) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (749) wifi:Init management short buffer num: 32[0m
+[0;32mI (749) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (759) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (759) wifi:Init static rx buffer num: 10[0m
+[0;32mI (769) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (769) wifi_init: rx ba win: 6[0m
+[0;32mI (769) wifi_init: accept mbox: 6[0m
+[0;32mI (779) wifi_init: tcpip mbox: 32[0m
+[0;32mI (779) wifi_init: udp mbox: 6[0m
+[0;32mI (779) wifi_init: tcp mbox: 6[0m
+[0;32mI (779) wifi_init: tcp tx win: 5760[0m
+[0;32mI (789) wifi_init: tcp rx win: 5760[0m
+[0;32mI (789) wifi_init: tcp mss: 1440[0m
+[0;32mI (789) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (799) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (799) WiFi_Manager: Loaded WiFi credentials from NVS (SSID: Tân Mai - 2.4G)[0m
+[0;32mI (809) WiFi_Manager: Starting WiFi STA with stored credentials...[0m
+[0;32mI (809) WiFi_Manager: Switching to STA mode with SSID: Tân Mai - 2.4G[0m
+[0;32mI (859) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (939) wifi:mode : sta (94:54:c5:a8:13:68)[0m
+[0;32mI (939) wifi:enable tsf[0m
+[1;31mE (939) wifi:sta is connecting, return error[0m
+[0;32mI (1199) WiFi_Manager: Waiting for WiFi connection or failure...[0m
+[0;32mI (1249) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1259) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1259) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1269) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1269) wifi:connected with Tân Mai - 2.4G, aid = 5, channel 11, BW20, bssid = 7c:a1:07:b0:86:00[0m
+[0;32mI (1279) wifi:security: WPA2-PSK, phy: bgn, rssi: -77[0m
+[0;32mI (1289) wifi:pm start, type: 1[0m
+
+[0;32mI (1399) wifi:AP's beacon interval = 204800 us, DTIM period = 1[0m
+[0;32mI (2619) esp_netif_handlers: sta ip: 192.168.1.103, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (2619) WiFi_Manager: Got IP: 192.168.1.103[0m
+[0;32mI (2619) SmartHome: === WiFi Connected ===[0m
+[1;31mE (2619) MQTT_App: MQTT client not initialized[0m
+[0;32mI (2629) WiFi_Manager: Connected to WiFi successfully[0m
+[0;32mI (2629) SmartHome: Initializing MQTT App...[0m
+[0;32mI (2639) MQTT_App: TLS enabled with certificate bundle[0m
+[0;32mI (2639) MQTT_App: MQTT authentication enabled - Username: quyen[0m
+[0;32mI (2649) MQTT_App: MQTT app initialized - Broker: mqtts://5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883, Client ID: esp32_room_01[0m
+[0;32mI (2659) SmartHome: MQTT will start automatically when WiFi connection is established[0m
+[0;32mI (2659) SmartHome: ==========================================================[0m
+[0;32mI (2669) SmartHome:         Smart Home System Started Successfully![0m
+[0;32mI (2679) SmartHome: ==========================================================[0m
+[0;32mI (2679) SmartHome: WiFi: provisioning portal if no stored credentials (SSID: ESP32-Setup)[0m
+[0;32mI (2689) SmartHome: MQTT Broker: 5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883 (TLS: Yes)[0m
+[0;32mI (2699) SmartHome: LED GPIOs: 25, 26, 27[0m
+[0;32mI (2699) SmartHome: Button GPIOs: 32, 33, 13[0m
+[0;32mI (2709) SmartHome: DHT11 GPIO: 4[0m
+[0;32mI (2709) SmartHome: ==========================================================[0m
+[0;32mI (2719) SmartHome: Running LED test...[0m
+[0;32mI (2719) LED_Controller: Turning all LEDs on[0m
+[0;32mI (2729) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (2729) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (2739) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (2739) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (2739) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (2749) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (3249) LED_Controller: Turning all LEDs off[0m
+[0;32mI (3249) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (3249) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (3249) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (3249) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (3259) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (3259) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (3259) SmartHome: System ready. Press buttons to control LEDs![0m
+[0;32mI (3269) main_task: Returned from app_main()[0m
+[0;32mI (5799) Button_Handler: Button 1 pressed (count: 1, GPIO: 33)[0m
+[0;32mI (5799) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (5799) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (5799) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (10769) Button_Handler: Button 0 pressed (count: 1, GPIO: 32)[0m
+[0;32mI (10769) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (10769) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (10769) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (12609) Button_Handler: Button 2 pressed (count: 1, GPIO: 13)[0m
+[0;32mI (12609) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (12609) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (12609) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (13299) Button_Handler: Button 2 pressed (count: 2, GPIO: 13)[0m
+[0;32mI (13299) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (13299) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (13299) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (13889) Button_Handler: Button 1 pressed (count: 2, GPIO: 33)[0m
+[0;32mI (13889) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (13889) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (13889) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (14359) Button_Handler: Button 0 pressed (count: 2, GPIO: 32)[0m
+[0;32mI (14359) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (14359) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (14359) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (39329) Button_Handler: Button 1 pressed (count: 3, GPIO: 33)[0m
+[0;32mI (39329) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (39329) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (39329) SmartHome: LED 1 state changed to: ON[0m
+���������������������������������������������������������������� (70289) Button_Handler: Button 1 pressed (count: 4, GPIO: 33)
+[0;32mI (70289) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (70289) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (70289) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (75399) Button_Handler: Button 2 pressed (count: 3, GPIO: 13)[0m
+[0;32mI (75399) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (75399) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (75399) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (76609) Button_Handler: Button 2 pressed (count: 4, GPIO: 13)[0m
+[0;32mI (76609) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (76609) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (76609) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (86399) wifi:<ba-add>idx:0 (ifx:0, 7c:a1:07:b0:86:00), tid:0, ssn:49, winSize:64[0m

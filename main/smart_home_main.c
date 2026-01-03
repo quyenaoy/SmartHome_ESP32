@@ -35,15 +35,21 @@ static void on_mqtt_connected(void);
  */
 static void on_wifi_connected(void)
 {
-    ESP_LOGI(TAG, "=== WiFi Connected ===");
+    ESP_LOGI(TAG, "=== WiFi Connected Callback Triggered ===");
     
-    // Start MQTT client after WiFi is connected
-    mqtt_app_start();
+    ESP_LOGI(TAG, "Starting MQTT client...");
+    esp_err_t ret = mqtt_app_start();
+    if (ret == ESP_OK) {
+        ESP_LOGI(TAG, "MQTT client started successfully");
+    } else {
+        ESP_LOGE(TAG, "Failed to start MQTT client: %s", esp_err_to_name(ret));
+    }
     
     // Wait a bit for MQTT connection
-    vTaskDelay(pdMS_TO_TICKS(1500));
+    vTaskDelay(pdMS_TO_TICKS(2000));
     
     // Re-subscribe to topics when reconnected
+    ESP_LOGI(TAG, "Subscribing to MQTT topics...");
     subscribe_to_topics();
 }
 
@@ -239,33 +245,22 @@ void app_main(void)
     ESP_ERROR_CHECK(dht11_sensor_init(DHT11_GPIO, on_dht11_reading));
     ESP_ERROR_CHECK(dht11_sensor_start_periodic(DHT11_READ_INTERVAL_MS));
     
-    // 4. WiFi Manager
-    ESP_LOGI(TAG, "Initializing WiFi Manager...");
-    ESP_ERROR_CHECK(wifi_manager_init(WIFI_SSID, WIFI_PASSWORD, 
-                                     on_wifi_connected, on_wifi_disconnected));
-    ESP_ERROR_CHECK(wifi_manager_start());
-    
-    // 5. MQTT App
+    // 4. MQTT App (must init BEFORE WiFi to avoid callback race condition)
     ESP_LOGI(TAG, "Initializing MQTT App...");
     ESP_ERROR_CHECK(mqtt_app_init(MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USE_TLS,
                                   MQTT_USERNAME, MQTT_PASSWORD,
                                   MQTT_CLIENT_ID, on_mqtt_message));
-
     // Register MQTT connected callback to re-subscribe on reconnect
     mqtt_app_set_connected_cb(on_mqtt_connected);
     
-    // Wait a bit for WiFi connection
-    vTaskDelay(pdMS_TO_TICKS(3000));
+    // 5. WiFi Manager (init and start - may trigger on_wifi_connected callback immediately)
+    ESP_LOGI(TAG, "Initializing WiFi Manager (provisioning capable)...");
+    ESP_ERROR_CHECK(wifi_manager_init(on_wifi_connected, on_wifi_disconnected));
+    // wifi_manager_start will either connect with stored creds or start AP portal at 192.168.4.1
+    ESP_ERROR_CHECK(wifi_manager_start());
     
-    // Start MQTT if WiFi is already connected
-    if (wifi_manager_is_connected() && !mqtt_app_is_connected()) {
-        ESP_LOGI(TAG, "WiFi already connected, starting MQTT...");
-        mqtt_app_start();
-        vTaskDelay(pdMS_TO_TICKS(2000));  // Wait for MQTT connection
-    }
-    
-    // Subscribe to LED control topics
-    subscribe_to_topics();
+    // Note: MQTT will be started automatically when WiFi connects (via on_wifi_connected callback)
+    ESP_LOGI(TAG, "MQTT will start automatically when WiFi connection is established");
     
     // Start device reporting task (every 2 minutes)
     xTaskCreate(device_report_task, "device_task", 3072, NULL, 5, NULL);
@@ -273,7 +268,7 @@ void app_main(void)
     ESP_LOGI(TAG, "==========================================================");
     ESP_LOGI(TAG, "        Smart Home System Started Successfully!");
     ESP_LOGI(TAG, "==========================================================");
-    ESP_LOGI(TAG, "WiFi SSID: %s", WIFI_SSID);
+    ESP_LOGI(TAG, "WiFi: provisioning portal if no stored credentials (SSID: ESP32-Setup)");
     ESP_LOGI(TAG, "MQTT Broker: %s:%d (TLS: %s)", MQTT_BROKER_HOST, MQTT_BROKER_PORT, 
              MQTT_USE_TLS ? "Yes" : "No");
     ESP_LOGI(TAG, "LED GPIOs: %d, %d, %d", LED1_GPIO, LED2_GPIO, LED3_GPIO);
