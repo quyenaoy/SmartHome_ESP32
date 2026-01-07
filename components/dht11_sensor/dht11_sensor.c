@@ -159,7 +159,7 @@ esp_err_t dht11_sensor_start_periodic(uint32_t interval_ms)
     s_interval_ms = interval_ms;
 
     BaseType_t ret = xTaskCreate(dht11_periodic_task, "dht11_task", 
-                                 2048, NULL, 5, &s_periodic_task_handle);
+                                 4096, NULL, 5, &s_periodic_task_handle);
     
     if (ret != pdPASS) {
         ESP_LOGE(TAG, "Failed to create periodic task");

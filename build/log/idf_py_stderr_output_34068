@@ -3,6 +3,5 @@ Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python
 [0;33m--- Using \\.\COM3 instead...[0m
 [0;33m--- esp-idf-monitor 1.8.0 on \\.\COM3 115200[0m
 [0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
-[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
 [0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
 [0m

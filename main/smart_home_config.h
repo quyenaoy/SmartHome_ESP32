@@ -41,7 +41,7 @@
 
 // ===== Timing Configuration =====
 #define BUTTON_DEBOUNCE_MS      50      // Thời gian debounce cho nút bấm
-#define DHT11_READ_INTERVAL_MS  300000  // Đọc DHT11 mỗi 5 phút (300 giây)
+#define DHT11_READ_INTERVAL_MS  60000  // Đọc DHT11 mỗi 1 phút (60 giây)
 #define MQTT_PUBLISH_INTERVAL_MS 5000   // Gửi trạng thái mỗi 5 giây
 
 // ===== System Configuration =====

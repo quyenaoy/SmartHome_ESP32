@@ -1,0 +1,317 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+SH_BOOT)
+conigsp: , SPIWP:0xeeclkdrv0x00,q_drv:0x00,ddrv0x0,cs0_drv:0x00hddrv0x00,wp_drv:0x00mod:DI,�etsJun  8 2016 00:22:57
+rs:0x1 (POWERON_REST),bot:0x17 (SPI_FAS_FLAS_BOOT)
+configsp: 0 SPIWP:0xee
+clk_drv:x00,qdrv:0x00,d_drv:x00,c0_drv:0x00,hd_dr:0x0,wp_drv:0x00
+moe:DI, clock div:2
+load:0xfff030,len:6380
+ho0 tal 12 room 4
+load:0x007800,len:15916
+lod:0x0080400,len:386
+enty 0x40080638
+[0;32mI (28) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (28) boot: compile time Jan  3 2026 23:15:03[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=34860h (215136) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=00044888 vaddr=3ffb0000 size=03f1ch ( 16156) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=000487ac vaddr=40080000 size=0786ch ( 30828) load[0m
+[0;32mI (180) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=a96c0h (693952) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000f96e8 vaddr=4008786c size=10a14h ( 68116) load[0m
+[0;32mI (444) esp_image: segment 5: paddr=0010a104 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (456) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (456) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (475) cpu_start: Pro cpu start user code[0m
+[0;32mI (475) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (475) app_init: Application information:[0m
+[0;32mI (475) app_init: Project name:     smart_home[0m
+[0;32mI (479) app_init: App version:      6ddd012-dirty[0m
+[0;32mI (483) app_init: Compile time:     Jan  7 2026 19:21:15[0m
+[0;32mI (488) app_init: ELF file SHA256:  28cf4ab13...[0m
+[0;32mI (493) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (497) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (501) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (505) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (509) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (515) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (520) heap_init: At 3FFB8778 len 00027888 (158 KiB): DRAM[0m
+[0;32mI (525) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (531) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (536) heap_init: At 40098280 len 00007D80 (31 KiB): IRAM[0m
+[0;32mI (543) spi_flash: detected chip: generic[0m
+[0;32mI (545) spi_flash: flash io: dio[0m
+[0;33mW (548) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (561) main_task: Started on CPU0[0m
+[0;32mI (571) main_task: Calling app_main()[0m
+[0;32mI (571) SmartHome: ==========================================================[0m
+[0;32mI (571) SmartHome:         Smart Home Light Switch - ESP32[0m
+[0;32mI (571) SmartHome: ==========================================================[0m
+[0;32mI (621) SmartHome: Initializing LED Controller...[0m
+[0;32mI (621) LED_Controller: LED 0 initialized on GPIO 25[0m
+[0;32mI (621) LED_Controller: LED 1 initialized on GPIO 26[0m
+[0;32mI (621) LED_Controller: LED 2 initialized on GPIO 27[0m
+[0;32mI (631) LED_Controller: LED controller initialized with 3 LEDs[0m
+[0;32mI (631) SmartHome: Initializing Button Handler...[0m
+[0;32mI (641) Button_Handler: Button 0 initialized on GPIO 32[0m
+[1;31mE (641) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (651) Button_Handler: Button 1 initialized on GPIO 33[0m
+[1;31mE (651) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (661) Button_Handler: Button 2 initialized on GPIO 13[0m
+[0;32mI (671) Button_Handler: Button handler initialized with 3 buttons (debounce: 50 ms)[0m
+[0;32mI (671) SmartHome: Initializing DHT11 Sensor...[0m
+[0;32mI (681) DHT11_Sensor: DHT11 sensor initialized on GPIO 4[0m
+[1;31mE (701) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (701) DHT11_Sensor: Started periodic reading every 60000 ms[0m
+[0;32mI (701) SmartHome: Initializing MQTT App...[0m
+[0;32mI (701) MQTT_App: TLS enabled with certificate bundle[0m
+[0;32mI (711) MQTT_App: MQTT authentication enabled - Username: quyen[0m
+[0;32mI (711) MQTT_App: MQTT app initialized - Broker: mqtts://5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883, Client ID: esp32_room_01[0m
+[0;32mI (731) SmartHome: Initializing WiFi Manager (provisioning capable)...[0m
+[0;32mI (751) wifi:wifi driver task: 3ffc3bf4, prio:23, stack:6656, core=0[0m
+[0;32mI (771) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (771) wifi:wifi certification version: v7.0[0m
+[0;32mI (771) wifi:config NVS flash: enabled[0m
+[0;32mI (771) wifi:config nano formatting: disabled[0m
+[0;32mI (771) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (781) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (781) wifi:Init management short buffer num: 32[0m
+[0;32mI (781) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (791) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (791) wifi:Init static rx buffer num: 10[0m
+[0;32mI (801) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (801) wifi_init: rx ba win: 6[0m
+[0;32mI (801) wifi_init: accept mbox: 6[0m
+[0;32mI (811) wifi_init: tcpip mbox: 32[0m
+[0;32mI (811) wifi_init: udp mbox: 6[0m
+[0;32mI (811) wifi_init: tcp mbox: 6[0m
+[0;32mI (821) wifi_init: tcp tx win: 5760[0m
+[0;32mI (821) wifi_init: tcp rx win: 5760[0m
+[0;32mI (821) wifi_init: tcp mss: 1440[0m
+[0;32mI (821) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (831) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (831) WiFi_Manager: Loaded WiFi credentials from NVS (SSID: Aoynehi, Room: r01)[0m
+[0;32mI (841) WiFi_Manager: Starting WiFi STA with stored credentials...[0m
+[0;32mI (841) WiFi_Manager: Configuring STA for SSID: Aoynehi (keep_portal=0)[0m
+[0;32mI (1351) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (1421) wifi:mode : sta (94:54:c5:a8:13:68)[0m
+[0;32mI (1421) wifi:enable tsf[0m
+[1;31mE (1431) wifi:sta is connecting, return error[0m
+[0;32mI (1431) WiFi_Manager: Waiting for WiFi connection or failure...[0m
+[0;32mI (1431) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1441) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2941) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2961) wifi:Association refused temporarily time 196, comeback time 296 (TUs)[0m
+[0;32mI (3261) wifi:state: assoc -> auth (0xb0)[0m
+[0;32mI (4741) wifi:state: auth -> assoc (0x0)[0m
+[1;31mE (4751) wifi:Association refused too many times, max allowed 1[0m
+[0;32mI (4751) wifi:state: assoc -> init (0xd010)[0m
+[0;32mI (4761) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (4761) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (4761) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (4761) WiFi_Manager: Retry connecting to WiFi (1/5)...[0m
+[0;33mW (7191) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (7191) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (7191) WiFi_Manager: Retry connecting to WiFi (2/5)...[0m
+[0;32mI (7201) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7201) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8681) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (8691) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (8731) wifi:connected with Aoynehi, aid = 1, channel 6, BW20, bssid = c6:1f:67:62:95:e9[0m
+[0;32mI (8731) wifi:security: WPA3-SAE, phy: bgn, rssi: -54[0m
+[0;32mI (8741) wifi:pm start, type: 1[0m
+
+[0;32mI (8741) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (8801) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (9731) wifi:<ba-add>idx:0 (ifx:0, c6:1f:67:62:95:e9), tid:0, ssn:175, winSize:64[0m
+[0;32mI (9781) esp_netif_handlers: sta ip: 172.20.10.9, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (9781) WiFi_Manager: Got IP: 172.20.10.9[0m
+[0;32mI (9781) SmartHome: === WiFi Connected Callback Triggered ===[0m
+[0;32mI (9781) SmartHome: Starting MQTT client...[0m
+[0;32mI (9791) MQTT_App: Starting MQTT client connection...[0m
+[0;32mI (9791) MQTT_App: MQTT app start command sent successfully[0m
+[0;32mI (9801) SmartHome: MQTT client started successfully[0m
+[0;32mI (9801) WiFi_Manager: Connected to WiFi successfully[0m
+[0;32mI (9811) SmartHome: MQTT will start automatically when WiFi connection is established[0m
+[0;32mI (9811) SmartHome: ==========================================================[0m
+[0;32mI (9821) SmartHome:         Smart Home System Started Successfully![0m
+[0;32mI (9831) SmartHome: ==========================================================[0m
+[0;32mI (9831) SmartHome: WiFi: provisioning portal if no stored credentials (SSID: ESP32-Setup)[0m
+[0;32mI (9841) SmartHome: MQTT Broker: 5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883 (TLS: Yes)[0m
+[0;32mI (9851) SmartHome: LED GPIOs: 25, 26, 27[0m
+[0;32mI (9851) SmartHome: Button GPIOs: 32, 33, 13[0m
+[0;32mI (9861) SmartHome: DHT11 GPIO: 4[0m
+[0;32mI (9861) SmartHome: ==========================================================[0m
+[0;32mI (9871) SmartHome: Running LED test...[0m
+[0;32mI (9871) LED_Controller: Turning all LEDs on[0m
+[0;32mI (9881) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (9881) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (9881) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (9891) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (9891) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (9901) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (10401) LED_Controller: Turning all LEDs off[0m
+[0;32mI (10401) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (10401) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (10401) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (10401) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (10411) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (10411) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (10421) SmartHome: System ready. Press buttons to control LEDs![0m
+[0;32mI (10421) main_task: Returned from app_main()[0m
+[0;32mI (11801) SmartHome: Subscribing to MQTT topics...[0m
+[0;33mW (11801) SmartHome: MQTT not connected, skipping subscription[0m
+[0;32mI (12871) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (18981) MQTT_App: MQTT connected to broker[0m
+[0;32mI (18981) SmartHome: MQTT connected callback - subscribing[0m
+[0;32mI (18981) MQTT_App: Subscribing to dynamic topic: r01/device[0m
+[0;32mI (18991) MQTT_App: Subscribed to topic: r01/device, msg_id=46195[0m
+[0;32mI (18991) SmartHome: Subscribed to device topic with roomId=r01[0m
+[0;32mI (20481) MQTT_App: MQTT subscribed, msg_id=46195[0m
+[0;32mI (29441) Button_Handler: Button 0 pressed (count: 1, GPIO: 32)[0m
+[0;32mI (29441) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (29441) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (29441) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (29441) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (29451) SmartHome: LED state published to r01/device: {"device1":1,"device2":0,"device3":0}[0m
+[0;32mI (30021) Button_Handler: Button 1 pressed (count: 1, GPIO: 33)[0m
+[0;32mI (30021) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (30021) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (30021) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (30021) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (30031) SmartHome: LED state published to r01/device: {"device1":1,"device2":1,"device3":0}[0m
+[0;32mI (30491) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (30491) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (30501) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (30501) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (30511) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (30511) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (30521) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (30531) MQTT_App: MQTT published, msg_id=41027[0m
+[0;32mI (30881) Button_Handler: Button 2 pressed (count: 1, GPIO: 13)[0m
+[0;32mI (30881) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (30881) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (30881) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (30881) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (30891) SmartHome: LED state published to r01/device: {"device1":1,"device2":0,"device3":1}[0m
+[0;32mI (31991) MQTT_App: MQTT published, msg_id=21722[0m
+[0;32mI (32291) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (32291) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (32291) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (32301) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (32301) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (32311) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (32311) SmartHome: MQTT: Turning OFF LED 3[0m
+[0;32mI (32311) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (32321) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (32321) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (32331) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (32341) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":0,"device3":1} (len=37)[0m
+[0;32mI (32341) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (32351) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (32351) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (32361) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (32361) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (32371) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (32371) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (32381) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (32391) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (32391) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (32401) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (32401) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (32411) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (32411) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (32421) SmartHome: MQTT: Turning OFF LED 3[0m
+[0;32mI (32421) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (32431) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (32431) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (32441) MQTT_App: MQTT published, msg_id=12136[0m
+[0;32mI (36501) Button_Handler: Button 2 pressed (count: 2, GPIO: 13)[0m
+[0;32mI (36501) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (36501) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (36501) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (36501) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (36511) SmartHome: LED state published to r01/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (38071) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (38071) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (38081) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (38081) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (38101) MQTT_App: MQTT published, msg_id=6339[0m
+[1;31mE (60721) DHT11_Sensor: Failed to read bit 34[0m
+[0;32mI (61431) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (61431) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":0,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (61431) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (61441) SmartHome: MQTT: Turning OFF LED 1[0m
+[0;32mI (61441) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (61451) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (61451) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (61461) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (61461) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (61471) SmartHome: MQTT: Turning OFF LED 3[0m
+[0;32mI (61471) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (61471) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (61481) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (67651) Button_Handler: Button 0 pressed (count: 2, GPIO: 32)[0m
+[0;32mI (67651) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (67651) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (67651) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (67651) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (67671) SmartHome: LED state published to r01/device: {"device1":1,"device2":0,"device3":0}[0m
+[0;32mI (68921) Button_Handler: Button 1 pressed (count: 2, GPIO: 33)[0m
+[0;32mI (68921) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (68921) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (68921) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (68921) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (68931) SmartHome: LED state published to r01/device: {"device1":1,"device2":1,"device3":0}[0m
+[0;32mI (69031) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (69031) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (69031) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (69041) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (69041) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (69051) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (69051) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (69071) MQTT_App: MQTT published, msg_id=57172[0m
+[0;32mI (70521) MQTT_App: MQTT published, msg_id=38340[0m
+[0;32mI (70841) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (70841) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (70841) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (70851) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (70851) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (70861) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (70861) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (70871) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (70881) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (70881) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (70891) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (120741) DHT11_Sensor: Temperature: 21.8°C, Humidity: 55.0%[0m
+[0;32mI (120741) SmartHome: DHT11 - Temperature: 21.8°C, Humidity: 55.0%[0m
+[0;32mI (120741) MQTT_App: Publishing to dynamic topic: r01/status[0m
+[0;32mI (120751) SmartHome: Sensor data published to r01/status: {"temperature":21.8,"humidity":55.0}[0m
+[0;32mI (121461) MQTT_App: MQTT published, msg_id=50928[0m
+[0;32mI (129811) MQTT_App: Publishing to device topic: r01/device[0m
+[0;32mI (129811) SmartHome: Periodic LED state published to r01/device: {"device1":1,"device2":1,"device3":0}[0m
+[0;32mI (131601) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (131601) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (131601) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (131611) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (131621) MQTT_App: MQTT published, msg_id=30475[0m
+[0;32mI (134561) MQTT_App: MQTT message received - Topic: r01/device[0m
+[0;32mI (134561) SmartHome: MQTT Message - Topic: r01/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (134571) SmartHome: Processing command from r01/device (rebound flag set)[0m
+[0;32mI (134571) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (180771) DHT11_Sensor: Temperature: 21.8°C, Humidity: 55.0%[0m
+[0;32mI (180771) SmartHome: DHT11 - Temperature: 21.8°C, Humidity: 55.0%[0m
+[0;32mI (180771) MQTT_App: Publishing to dynamic topic: r01/status[0m
+[0;32mI (180781) SmartHome: Sensor data published to r01/status: {"temperature":21.8,"humidity":55.0}[0m
+[0;32mI (184531) MQTT_App: MQTT published, msg_id=65184[0m
