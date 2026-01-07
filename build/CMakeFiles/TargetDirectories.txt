@@ -873,6 +873,13 @@ D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/button_handler/CMakeFiles/list
 D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/button_handler/CMakeFiles/install.dir
 D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/button_handler/CMakeFiles/install/local.dir
 D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/button_handler/CMakeFiles/install/strip.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/__idf_sound_sensor.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/edit_cache.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/rebuild_cache.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/list_install_components.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/install.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/install/local.dir
+D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/sound_sensor/CMakeFiles/install/strip.dir
 D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/main/CMakeFiles/__idf_main.dir
 D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/main/CMakeFiles/edit_cache.dir
 D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/main/CMakeFiles/rebuild_cache.dir

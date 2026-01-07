@@ -1,0 +1,837 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+SH_BOOT)
+configip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:000,cs0_drv:0x00,h_drv:0x00,wp_drv:0x00
+mode:DIO,�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:x3ff000,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (28) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (28) boot: compile time Jan  3 2026 23:15:03[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=35088h (217224) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=000450b0 vaddr=3ffb0000 size=03f2ch ( 16172) load[0m
+[0;32mI (168) esp_image: segment 2: paddr=00048fe4 vaddr=40080000 size=07034h ( 28724) load[0m
+[0;32mI (180) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=aad7ch (699772) map[0m
+[0;32mI (419) esp_image: segment 4: paddr=000fada4 vaddr=40087034 size=11254h ( 70228) load[0m
+[0;32mI (446) esp_image: segment 5: paddr=0010c000 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (458) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (469) cpu_start: Multicore app[0m
+[0;32mI (477) cpu_start: Pro cpu start user code[0m
+[0;32mI (477) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (478) app_init: Project name:     smart_home[0m
+[0;32mI (482) app_init: App version:      881f49a-dirty[0m
+[0;32mI (486) app_init: Compile time:     Jan  7 2026 19:33:42[0m
+[0;32mI (491) app_init: ELF file SHA256:  9c6a88b1b...[0m
+[0;32mI (495) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (500) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (504) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (508) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (512) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (518) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFB87C0 len 00027840 (158 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 40098288 len 00007D78 (31 KiB): IRAM[0m
+[0;32mI (546) spi_flash: detected chip: generic[0m
+[0;32mI (548) spi_flash: flash io: dio[0m
+[0;33mW (551) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (564) main_task: Started on CPU0[0m
+[0;32mI (574) main_task: Calling app_main()[0m
+[0;32mI (574) SmartHome: ==========================================================[0m
+[0;32mI (574) SmartHome:         Smart Home Light Switch - ESP32[0m
+[0;32mI (574) SmartHome: ==========================================================[0m
+[0;32mI (624) SmartHome: Initializing LED Controller...[0m
+[0;32mI (624) LED_Controller: LED 0 initialized on GPIO 25[0m
+[0;32mI (624) LED_Controller: LED 1 initialized on GPIO 26[0m
+[0;32mI (624) LED_Controller: LED 2 initialized on GPIO 27[0m
+[0;32mI (634) LED_Controller: LED controller initialized with 3 LEDs[0m
+[0;32mI (634) SmartHome: Initializing Button Handler...[0m
+[0;32mI (644) Button_Handler: Button 0 initialized on GPIO 32[0m
+[1;31mE (644) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (654) Button_Handler: Button 1 initialized on GPIO 33[0m
+[1;31mE (654) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (664) Button_Handler: Button 2 initialized on GPIO 13[0m
+[0;32mI (664) Button_Handler: Button handler initialized with 3 buttons (debounce: 50 ms)[0m
+[0;32mI (674) SmartHome: Initializing DHT11 Sensor...[0m
+[0;32mI (684) DHT11_Sensor: DHT11 sensor initialized on GPIO 4[0m
+[1;31mE (704) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (704) DHT11_Sensor: Started periodic reading every 60000 ms[0m
+[0;32mI (704) SmartHome: Initializing Sound Sensor...[0m
+[0;32mI (704) SoundSensor: Sound sensor initialized on GPIO 34 (ADC1_CH6), threshold=1000[0m
+[0;32mI (714) SoundSensor: Sound monitoring started (sampling every 100 ms)[0m
+[0;32mI (724) SmartHome: Initializing MQTT App...[0m
+[0;32mI (724) MQTT_App: TLS enabled with certificate bundle[0m
+[0;32mI (724) MQTT_App: MQTT authentication enabled - Username: quyen[0m
+[0;32mI (734) MQTT_App: MQTT app initialized - Broker: mqtts://5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883, Client ID: esp32_room_01[0m
+[0;32mI (744) SmartHome: Initializing WiFi Manager (provisioning capable)...[0m
+[0;32mI (764) wifi:wifi driver task: 3ffc4a40, prio:23, stack:6656, core=0[0m
+[0;32mI (784) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (784) wifi:wifi certification version: v7.0[0m
+[0;32mI (784) wifi:config NVS flash: enabled[0m
+[0;32mI (784) wifi:config nano formatting: disabled[0m
+[0;32mI (784) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (794) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (794) wifi:Init management short buffer num: 32[0m
+[0;32mI (794) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (804) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (804) wifi:Init static rx buffer num: 10[0m
+[0;32mI (814) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (814) wifi_init: rx ba win: 6[0m
+[0;32mI (814) wifi_init: accept mbox: 6[0m
+[0;32mI (824) wifi_init: tcpip mbox: 32[0m
+[0;32mI (824) wifi_init: udp mbox: 6[0m
+[0;32mI (824) wifi_init: tcp mbox: 6[0m
+[0;32mI (824) wifi_init: tcp tx win: 5760[0m
+[0;32mI (834) wifi_init: tcp rx win: 5760[0m
+[0;32mI (834) wifi_init: tcp mss: 1440[0m
+[0;32mI (834) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (844) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (844) WiFi_Manager: Loaded WiFi credentials from NVS (SSID: Aoynehi, Room: 695e34801631480d7e939edc)[0m
+[0;32mI (854) WiFi_Manager: Starting WiFi STA with stored credentials...[0m
+[0;32mI (864) WiFi_Manager: Configuring STA for SSID: Aoynehi (keep_portal=0)[0m
+[0;32mI (1364) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (1434) wifi:mode : sta (94:54:c5:a8:13:68)[0m
+[0;32mI (1434) wifi:enable tsf[0m
+[1;31mE (1444) wifi:sta is connecting, return error[0m
+[0;32mI (1444) WiFi_Manager: Waiting for WiFi connection or failure...[0m
+[0;32mI (1454) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1454) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2714) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (2724) wifi:Association refused temporarily time 196, comeback time 296 (TUs)[0m
+[0;32mI (3024) wifi:state: assoc -> auth (0xb0)[0m
+[0;32mI (4294) wifi:state: auth -> assoc (0x0)[0m
+[1;31mE (4304) wifi:Association refused too many times, max allowed 1[0m
+[0;32mI (4304) wifi:state: assoc -> init (0xd010)[0m
+[0;32mI (4314) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (4314) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (4314) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (4324) WiFi_Manager: Retry connecting to WiFi (1/5)...[0m
+[0;32mI (5614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (6744) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (6744) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (6744) WiFi_Manager: Retry connecting to WiFi (2/5)...[0m
+[0;32mI (6764) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (6764) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8024) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (8034) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (10614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (12054) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (12064) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (12064) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (12064) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (12064) WiFi_Manager: Retry connecting to WiFi (3/5)...[0m
+[0;33mW (14484) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (14494) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (14494) WiFi_Manager: Retry connecting to WiFi (4/5)...[0m
+[0;32mI (14504) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (14504) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (15614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (15774) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (15784) wifi:state: assoc -> run (0x10)[0m
+[0;33mW (16444) WiFi_Manager: Connection failed or timed out, starting provisioning AP[0m
+[0;33mW (16444) WiFi_Manager: Starting provisioning AP 'ESP32-Setup' (open network)[0m
+[0;32mI (16444) wifi:state: run -> init (0x0)[0m
+[0;32mI (16454) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (16454) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (16454) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (16464) WiFi_Manager: Retry connecting to WiFi (5/5)...[0m
+[0;32mI (16534) wifi:flush txq[0m
+[0;32mI (16534) wifi:stop sw txq[0m
+[0;32mI (16534) wifi:lmac stop hw txq[0m
+[0;32mI (16554) wifi:mode : sta (94:54:c5:a8:13:68) + softAP (94:54:c5:a8:13:69)[0m
+[0;32mI (16554) wifi:enable tsf[0m
+[0;32mI (16554) wifi:Total power save buffer number: 16[0m
+[0;32mI (16554) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (16554) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (16564) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (16574) wifi:ap channel adjust o:1,1 n:6,2[0m
+[0;32mI (16574) wifi:new:<6,0>, old:<1,1>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16584) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (16584) WiFi_Portal: HTTP provisioning server started at http://192.168.4.1/[0m
+[0;32mI (17324) WiFi_Manager: Periodic reconnect attempt to stored WiFi: Aoynehi[0m
+[0;32mI (17324) WiFi_Manager: Configuring STA for SSID: Aoynehi (keep_portal=1)[0m
+[0;32mI (17334) WiFi_Manager: Connect to WiFi 'ESP32-Setup' and open http://192.168.4.1 to configure.[0m
+[1;31mE (17334) wifi:sta is connecting, cannot set config[0m
+[0;32mI (17344) SmartHome: MQTT will start automatically when WiFi connection is established[0m
+[0;33mW (17344) WiFi_Manager: Failed to set WiFi config: ESP_ERR_WIFI_STATE[0m
+[0;32mI (17354) SmartHome: ==========================================================[0m
+[0;32mI (17364) SmartHome:         Smart Home System Started Successfully![0m
+[0;32mI (17374) SmartHome: ==========================================================[0m
+[0;32mI (17374) SmartHome: WiFi: provisioning portal if no stored credentials (SSID: ESP32-Setup)[0m
+[0;32mI (17384) SmartHome: MQTT Broker: 5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883 (TLS: Yes)[0m
+[0;32mI (17394) SmartHome: LED GPIOs: 25, 26, 27[0m
+[0;32mI (17394) SmartHome: Button GPIOs: 32, 33, 13[0m
+[0;32mI (17404) SmartHome: DHT11 GPIO: 4[0m
+[0;32mI (17404) SmartHome: Sound Sensor GPIO: 34 (ADC, Threshold: 1000)[0m
+[0;32mI (17414) SmartHome: ==========================================================[0m
+[0;32mI (17414) SmartHome: Running LED test...[0m
+[0;32mI (17424) LED_Controller: Turning all LEDs on[0m
+[0;32mI (17424) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (17434) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (17434) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (17844) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (17854) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (17854) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (17854) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (17884) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (17964) wifi:connected with Aoynehi, aid = 1, channel 6, BW20, bssid = be:ea:9a:98:5e:31[0m
+[0;32mI (17964) wifi:security: WPA3-SAE, phy: bgn, rssi: -73[0m
+[0;32mI (17974) wifi:pm start, type: 1[0m
+
+[0;32mI (17974) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (18014) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (18354) LED_Controller: Turning all LEDs off[0m
+[0;32mI (18354) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (18354) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (18354) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (18354) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (18364) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (18364) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (18374) SmartHome: System ready. Press buttons to control LEDs![0m
+[0;32mI (18374) main_task: Returned from app_main()[0m
+[0;32mI (19494) esp_netif_handlers: sta ip: 172.20.10.9, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (19494) WiFi_Manager: Got IP: 172.20.10.9[0m
+[0;32mI (19494) WiFi_Manager: Connected while portal active, shutting portal and switching to STA[0m
+[0;32mI (19604) WiFi_Portal: HTTP server stopped[0m
+[0;32mI (19604) wifi:mode : sta (94:54:c5:a8:13:68)[0m
+[0;32mI (19614) SmartHome: === WiFi Connected Callback Triggered ===[0m
+[0;32mI (19614) SmartHome: Starting MQTT client...[0m
+[0;32mI (19614) MQTT_App: Starting MQTT client connection...[0m
+[0;32mI (19614) MQTT_App: MQTT app start command sent successfully[0m
+[0;32mI (19624) SmartHome: MQTT client started successfully[0m
+[0;32mI (19624) wifi:<ba-add>idx:0 (ifx:0, be:ea:9a:98:5e:31), tid:0, ssn:2, winSize:64[0m
+[0;32mI (20614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (21034) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (21624) SmartHome: Subscribing to MQTT topics...[0m
+[0;33mW (21624) SmartHome: MQTT not connected, skipping subscription[0m
+[0;32mI (22434) MQTT_App: MQTT connected to broker[0m
+[0;32mI (22434) SmartHome: MQTT connected callback - subscribing[0m
+[0;32mI (22434) MQTT_App: Subscribing to dynamic topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (22444) MQTT_App: Subscribed to topic: 695e34801631480d7e939edc/device, msg_id=4910[0m
+[0;32mI (22444) SmartHome: Subscribed to device topic with roomId=695e34801631480d7e939edc[0m
+[0;32mI (22734) MQTT_App: MQTT subscribed, msg_id=4910[0m
+[0;32mI (25614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (30614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (35614) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (37314) SoundSensor: Sound threshold exceeded! Level: 2294 (Threshold: 1000)[0m
+[0;33mW (37314) SmartHome: Sound trigger activated! Level: 2294 - Publishing turn on command[0m
+[0;32mI (37314) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (37624) SoundSensor: Sound level returned to normal: 480[0m
+[0;32mI (37794) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (37794) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (37804) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (37814) SmartHome: MQTT: Turning ON LED 1[0m
+[0;32mI (37814) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (37814) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (37824) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (37824) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (37834) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (37834) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (37834) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (37844) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (37844) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (37864) MQTT_App: MQTT published, msg_id=46713[0m
+[0;32mI (40624) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (45624) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (46274) Button_Handler: Button 0 pressed (count: 1, GPIO: 32)[0m
+[0;32mI (46274) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (46274) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (46274) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (46274) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (46294) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":1}[0m
+[0;32mI (46704) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (46704) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (46714) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (46724) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (46734) MQTT_App: MQTT published, msg_id=52855[0m
+[0;32mI (46864) Button_Handler: Button 2 pressed (count: 1, GPIO: 13)[0m
+[0;32mI (46864) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (46864) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (46864) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (46864) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (46874) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":0}[0m
+[0;32mI (47284) Button_Handler: Button 1 pressed (count: 1, GPIO: 33)[0m
+[0;32mI (47284) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (47284) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (47284) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (47284) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (47294) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":0,"device3":0}[0m
+[0;32mI (47934) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (47934) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (47944) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (47954) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (47954) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (47954) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (47964) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (47974) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (47974) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (47984) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (47994) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (48004) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (48004) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (48014) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (48024) MQTT_App: MQTT published, msg_id=35890[0m
+[0;32mI (48024) MQTT_App: MQTT published, msg_id=41557[0m
+[0;32mI (50624) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (55624) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (60624) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (60714) DHT11_Sensor: No response from DHT11[0m
+[0;33mW (61324) SoundSensor: Sound threshold exceeded! Level: 4095 (Threshold: 1000)[0m
+[0;33mW (61324) SmartHome: Sound trigger activated! Level: 4095 - Publishing turn on command[0m
+[0;32mI (61324) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (61754) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (61754) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (61764) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (61764) SmartHome: MQTT: Turning ON LED 1[0m
+[0;32mI (61774) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (61774) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (61784) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (61784) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (61794) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (61794) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (61794) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (61804) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (61804) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (61824) MQTT_App: MQTT published, msg_id=13733[0m
+[0;32mI (61834) SoundSensor: Sound level returned to normal: 379[0m
+[0;32mI (62874) Button_Handler: Button 0 pressed (count: 2, GPIO: 32)[0m
+[0;32mI (62874) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (62874) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (62874) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (62874) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (62894) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":1}[0m
+[0;32mI (63294) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (63294) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (63304) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (63314) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (63324) MQTT_App: MQTT published, msg_id=33407[0m
+[0;33mW (65434) SoundSensor: Sound threshold exceeded! Level: 4095 (Threshold: 1000)[0m
+[0;33mW (65434) SmartHome: Sound trigger activated! Level: 4095 - Publishing turn on command[0m
+[0;32mI (65434) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (65544) SoundSensor: Sound level returned to normal: 0[0m
+[0;32mI (65644) SoundSensor: Sound level from GPIO34: 19 (Threshold: 1000)[0m
+[0;32mI (65744) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (65744) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (65754) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (65764) SmartHome: MQTT: Turning ON LED 1[0m
+[0;32mI (65764) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (65774) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (65774) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (65784) MQTT_App: MQTT published, msg_id=23110[0m
+[0;32mI (67074) Button_Handler: Button 0 pressed (count: 3, GPIO: 32)[0m
+[0;32mI (67074) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (67074) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (67074) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (67074) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (67094) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":1}[0m
+[0;32mI (67584) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (67584) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (67594) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (67604) Button_Handler: Button 1 pressed (count: 2, GPIO: 33)[0m
+[0;32mI (67604) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (67604) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (67624) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (67624) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (67624) MQTT_App: MQTT published, msg_id=15526[0m
+[0;32mI (67624) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (67644) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":0,"device3":1}[0m
+[0;32mI (68514) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (68514) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":0,"device3":1} (len=37)[0m
+[0;32mI (68524) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (68534) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (68544) MQTT_App: MQTT published, msg_id=6150[0m
+[0;33mW (69444) SoundSensor: Sound threshold exceeded! Level: 1363 (Threshold: 1000)[0m
+[0;33mW (69444) SmartHome: Sound trigger activated! Level: 1363 - Publishing turn on command[0m
+[0;32mI (69444) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (69554) SoundSensor: Sound level returned to normal: 16[0m
+[0;32mI (70044) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (70054) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (70054) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (70064) SmartHome: MQTT: Turning ON LED 1[0m
+[0;32mI (70074) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (70074) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (70074) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (70084) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (70084) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (70094) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (70104) MQTT_App: MQTT published, msg_id=46846[0m
+[0;32mI (70654) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (71304) Button_Handler: Button 0 pressed (count: 4, GPIO: 32)[0m
+[0;32mI (71304) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (71304) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (71304) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (71304) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (71324) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":1}[0m
+[0;32mI (71744) Button_Handler: Button 1 pressed (count: 3, GPIO: 33)[0m
+[0;32mI (71744) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (71744) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (71744) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (71744) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (71754) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":0,"device3":1}[0m
+[0;32mI (71884) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (71894) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (71894) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (71904) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (71914) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (71914) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (71914) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (71934) MQTT_App: MQTT published, msg_id=62720[0m
+[0;32mI (72044) Button_Handler: Button 2 pressed (count: 2, GPIO: 13)[0m
+[0;32mI (72044) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (72044) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (72044) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (72044) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (72054) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":0}[0m
+[0;32mI (72194) Button_Handler: Button 2 pressed (count: 3, GPIO: 13)[0m
+[0;32mI (72194) MQTT_App: MQTT published, msg_id=18947[0m
+[0;32mI (72194) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (72194) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (72194) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (72204) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (72214) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":1}[0m
+[0;32mI (72504) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (72504) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":0,"device3":1} (len=37)[0m
+[0;32mI (72514) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (72524) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (72524) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (72534) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (72534) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (72554) MQTT_App: MQTT published, msg_id=60244[0m
+[0;32mI (72804) MQTT_App: MQTT published, msg_id=64147[0m
+[0;32mI (73114) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (73114) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (73124) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (73124) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (73134) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (73134) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (73144) SmartHome: MQTT: Turning OFF LED 3[0m
+[0;32mI (73144) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (73154) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (73154) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (73164) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (73164) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (73184) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (73184) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (73194) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (73194) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (73204) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (75114) Button_Handler: Button 2 pressed (count: 4, GPIO: 13)[0m
+[0;32mI (75114) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (75114) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (75114) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (75114) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (75134) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":1,"device3":0}[0m
+[0;32mI (75574) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (75574) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (75584) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (75584) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (75604) MQTT_App: MQTT published, msg_id=27026[0m
+[0;32mI (75654) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (75704) Button_Handler: Button 1 pressed (count: 4, GPIO: 33)[0m
+[0;32mI (75704) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (75704) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (75704) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (75704) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (75714) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":0,"device3":0}[0m
+[0;32mI (76574) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (76574) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (76574) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (76584) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (76604) MQTT_App: MQTT published, msg_id=22851[0m
+[0;33mW (79254) SoundSensor: Sound threshold exceeded! Level: 3835 (Threshold: 1000)[0m
+[0;33mW (79254) SmartHome: Sound trigger activated! Level: 3835 - Publishing turn on command[0m
+[0;32mI (79254) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (79364) SoundSensor: Sound level returned to normal: 0[0m
+[0;32mI (79574) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (79574) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (79584) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (79584) SmartHome: MQTT: Turning ON LED 1[0m
+[0;32mI (79594) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (79594) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (79604) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (79604) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (79614) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (79614) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (79614) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (79624) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (79624) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (79644) MQTT_App: MQTT published, msg_id=20363[0m
+[0;32mI (80664) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (81894) Button_Handler: Button 2 pressed (count: 5, GPIO: 13)[0m
+[0;32mI (81894) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (81894) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (81894) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (81894) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (81914) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":1,"device3":0}[0m
+[0;32mI (82324) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (82334) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (82334) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (82344) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (82364) MQTT_App: MQTT published, msg_id=41506[0m
+[0;32mI (83554) Button_Handler: Button 1 pressed (count: 5, GPIO: 33)[0m
+[0;32mI (83554) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (83554) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (83554) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (83554) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (83564) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":0,"device3":0}[0m
+[0;32mI (84174) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (84174) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (84184) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (84184) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (84204) MQTT_App: MQTT published, msg_id=39350[0m
+[0;32mI (85134) Button_Handler: Button 0 pressed (count: 5, GPIO: 32)[0m
+[0;32mI (85134) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (85134) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (85134) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (85134) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (85154) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":0,"device3":0}[0m
+[0;32mI (85664) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (85924) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (85924) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":0,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (85934) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (85944) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (85954) MQTT_App: MQTT published, msg_id=62509[0m
+[0;33mW (87464) SoundSensor: Sound threshold exceeded! Level: 3692 (Threshold: 1000)[0m
+[0;33mW (87464) SmartHome: Sound trigger activated! Level: 3692 - Publishing turn on command[0m
+[0;32mI (87464) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (87774) SoundSensor: Sound level returned to normal: 0[0m
+[0;32mI (87864) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (87864) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;33mW (87874) SoundSensor: Sound threshold exceeded! Level: 1396 (Threshold: 1000)[0m
+[0;32mI (87874) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;33mW (87874) SmartHome: Sound trigger activated! Level: 1396 - Publishing turn on command[0m
+[0;32mI (87884) SmartHome: MQTT: Turning ON LED 1[0m
+[0;32mI (87894) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (87894) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (87914) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (87914) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (87914) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (87924) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (87924) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (87934) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (87934) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (87944) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (87954) MQTT_App: MQTT published, msg_id=44610[0m
+[0;32mI (88054) SoundSensor: Sound level returned to normal: 434[0m
+[0;32mI (88784) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (88784) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (88794) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (88804) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (88814) MQTT_App: MQTT published, msg_id=59844[0m
+[0;32mI (88934) Button_Handler: Button 2 pressed (count: 6, GPIO: 13)[0m
+[0;32mI (88934) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (88934) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (88934) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (88934) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (88944) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":1,"device3":0}[0m
+[0;32mI (89804) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (89804) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (89814) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (89824) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (89834) MQTT_App: MQTT published, msg_id=610[0m
+[0;32mI (90754) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (91554) SoundSensor: Sound threshold exceeded! Level: 3444 (Threshold: 1000)[0m
+[0;33mW (91554) SmartHome: Sound trigger activated! Level: 3444 - Publishing turn on command[0m
+[0;32mI (91554) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (91664) SoundSensor: Sound level returned to normal: 645[0m
+[0;32mI (91864) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (91864) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (91864) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (91874) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (91884) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (91884) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (91884) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (91904) MQTT_App: MQTT published, msg_id=63759[0m
+[0;32mI (93234) Button_Handler: Button 1 pressed (count: 6, GPIO: 33)[0m
+[0;32mI (93234) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (93234) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (93234) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (93234) MQTT_App: Publishing to devic���������������������������������������������������������������� topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (93254) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":0,"device3":1}[0m
+[0;32mI (93694) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (93694) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":0,"device3":1} (len=37)[0m
+[0;32mI (93704) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (93714) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (93724) MQTT_App: MQTT published, msg_id=60990[0m
+[0;32mI (94174) Button_Handler: Button 2 pressed (count: 7, GPIO: 13)[0m
+[0;32mI (94174) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (94174) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (94174) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (94174) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (94184) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":0,"device3":0}[0m
+[0;32mI (94624) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (94624) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (94634) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (94634) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (94654) MQTT_App: MQTT published, msg_id=54220[0m
+[0;32mI (95764) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (96764) SoundSensor: Sound threshold exceeded! Level: 4095 (Threshold: 1000)[0m
+[0;33mW (96764) SmartHome: Sound trigger activated! Level: 4095 - Publishing turn on command[0m
+[0;32mI (96764) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (96874) SoundSensor: Sound level returned to normal: 371[0m
+[0;32mI (97084) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (97084) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (97084) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (97094) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (97104) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (97104) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (97104) SmartHome: MQTT: Turning ON LED 3[0m
+[0;32mI (97114) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (97114) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (97124) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (97134) MQTT_App: MQTT published, msg_id=57863[0m
+[0;32mI (100774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (105774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (110774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (115774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (120724) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (120774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (125774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (130774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (135774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (137354) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (137354) SmartHome: Periodic LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (138244) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (138244) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (138244) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (138254) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (138274) MQTT_App: MQTT published, msg_id=63035[0m
+[0;32mI (140774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (145774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (150774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (155774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (160774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (163404) Button_Handler: Button 2 pressed (count: 8, GPIO: 13)[0m
+[0;32mI (163404) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (163404) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (163404) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (163404) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (163424) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":1,"device3":0}[0m
+[0;32mI (164094) Button_Handler: Button 1 pressed (count: 7, GPIO: 33)[0m
+[0;32mI (164094) SmartHome: Button 1 pressed - Toggling LED 1[0m
+[0;32mI (164094) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (164094) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (164094) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (164104) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":0,"device3":0}[0m
+[0;32mI (164354) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (164354) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":1,"device3":0} (len=37)[0m
+[0;32mI (164364) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (164374) SmartHome: MQTT: Turning ON LED 2[0m
+[0;32mI (164374) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (164384) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (164384) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (164394) MQTT_App: MQTT published, msg_id=64857[0m
+[0;32mI (164974) MQTT_App: MQTT published, msg_id=21272[0m
+[0;32mI (165684) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (165694) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (165694) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (165704) SmartHome: MQTT: Turning OFF LED 2[0m
+[0;32mI (165714) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (165714) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (165714) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (165774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (170774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (175774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (180734) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (180774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (185774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (190774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (195774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (200774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (205774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (210774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (215774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (220774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (225774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (230774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (235774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (240744) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (240774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (245774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (250774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (255774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (257354) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (257354) SmartHome: Periodic LED state published to 695e34801631480d7e939edc/device: {"device1":1,"device2":0,"device3":0}[0m
+[0;32mI (259594) MQTT_App: MQTT message received - Topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (259594) SmartHome: MQTT Message - Topic: 695e34801631480d7e939edc/device, Data: {"device1":1,"device2":0,"device3":0} (len=37)[0m
+[0;32mI (259604) SmartHome: Processing command from 695e34801631480d7e939edc/device (rebound flag set)[0m
+[0;32mI (259614) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (259624) MQTT_App: MQTT published, msg_id=51836[0m
+[0;32mI (260774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (265774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (270294) Button_Handler: Button 0 pressed (count: 6, GPIO: 32)[0m
+[0;32mI (270294) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (270294) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (270294) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (270294) MQTT_App: Publishing to device topic: 695e34801631480d7e939edc/device[0m
+[0;32mI (270314) SmartHome: LED state published to 695e34801631480d7e939edc/device: {"device1":0,"device2":0,"device3":0}[0m
+[0;32mI (270774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (275774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (280774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (285774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (290774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (295774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (300754) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (300774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (305774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (310774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (312224) wifi:[ADDBA]RX DELBA, reason:1, delete tid:0, initiator:0(recipient)[0m
+[0;32mI (315774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (320774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (325774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (330774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (333354) mqtt_client: No PING_RESP, disconnected[0m
+[0;33mW (333354) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (335774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (340774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (345774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (350774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (350804) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (355774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (360764) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (360774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (361174) esp-tls: Failed to open new connection in specified timeout[0m
+[1;31mE (361174) transport_base: Failed to open a new connection[0m
+[1;31mE (361174) mqtt_client: Error transport connect[0m
+[1;31mE (361174) MQTT_App: MQTT error event[0m
+[1;31mE (361174) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (361184) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (365774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (370774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (374174) SoundSensor: Sound threshold exceeded! Level: 4095 (Threshold: 1000)[0m
+[0;33mW (374174) SmartHome: Sound trigger activated! Level: 4095 - Publishing turn on command[0m
+[0;32mI (374374) SoundSensor: Sound level returned to normal: 0[0m
+[0;32mI (375774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (380174) SoundSensor: Sound threshold exceeded! Level: 1949 (Threshold: 1000)[0m
+[0;33mW (380174) SmartHome: Sound trigger activated! Level: 1949 - Publishing turn on command[0m
+[0;32mI (380374) SoundSensor: Sound level returned to normal: 842[0m
+[0;32mI (380774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (381204) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (381204) esp-tls: Failed to open new connection[0m
+[1;31mE (381204) transport_base: Failed to open a new connection[0m
+[1;31mE (381204) mqtt_client: Error transport connect[0m
+[1;31mE (381204) MQTT_App: MQTT error event[0m
+[1;31mE (381214) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (381214) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;33mW (381274) SoundSensor: Sound threshold exceeded! Level: 3859 (Threshold: 1000)[0m
+[0;33mW (381274) SmartHome: Sound trigger activated! Level: 3859 - Publishing turn on command[0m
+[0;32mI (381374) SoundSensor: Sound level returned to normal: 0[0m
+[0;33mW (381574) SoundSensor: Sound threshold exceeded! Level: 1663 (Threshold: 1000)[0m
+[0;33mW (381574) SmartHome: Sound trigger activated! Level: 1663 - Publishing turn on command[0m
+[0;32mI (381774) SoundSensor: Sound level returned to normal: 503[0m
+[0;32mI (385774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (390014) Button_Handler: Button 0 pressed (count: 7, GPIO: 32)[0m
+[0;32mI (390014) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (390014) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (390014) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (390614) Button_Handler: Button 0 pressed (count: 8, GPIO: 32)[0m
+[0;32mI (390614) SmartHome: Button 0 pressed - Toggling LED 0[0m
+[0;32mI (390614) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (390614) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (390774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (394574) SoundSensor: Sound threshold exceeded! Level: 3851 (Threshold: 1000)[0m
+[0;33mW (394574) SmartHome: Sound trigger activated! Level: 3851 - Publishing turn on command[0m
+[0;32mI (394674) SoundSensor: Sound level returned to normal: 0[0m
+[0;33mW (394774) SoundSensor: Sound threshold exceeded! Level: 2112 (Threshold: 1000)[0m
+[0;33mW (394774) SmartHome: Sound trigger activated! Level: 2112 - Publishing turn on command[0m
+[0;32mI (395074) SoundSensor: Sound level returned to normal: 442[0m
+[0;32mI (395774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (396274) SoundSensor: Sound threshold exceeded! Level: 1885 (Threshold: 1000)[0m
+[0;33mW (396274) SmartHome: Sound trigger activated! Level: 1885 - Publishing turn on command[0m
+[0;32mI (396374) SoundSensor: Sound level returned to normal: 0[0m
+���������������������������������������������������������������� (400774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)
+[1;31mE (401234) esp-tls: [sock=54] select() timeout[0m
+[1;31mE (401234) esp-tls: Failed to open new connection[0m
+[1;31mE (401234) transport_base: Failed to open a new connection[0m
+[1;31mE (401234) mqtt_client: Error transport connect[0m
+[1;31mE (401234) MQTT_App: MQTT error event[0m
+[1;31mE (401244) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (401244) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (405774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (410774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (413474) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (413484) wifi:<ba-add>idx:0 (ifx:0, be:ea:9a:98:5e:31), tid:0, ssn:191, winSize:64[0m
+[0;32mI (415774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (416674) SoundSensor: Sound threshold exceeded! Level: 1195 (Threshold: 1000)[0m
+[0;33mW (416674) SmartHome: Sound trigger activated! Level: 1195 - Publishing turn on command[0m
+[0;32mI (416774) SoundSensor: Sound level returned to normal: 807[0m
+[0;32mI (417554) Button_Handler: Button 2 pressed (count: 9, GPIO: 13)[0m
+[0;32mI (417554) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (417554) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (417554) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (417984) Button_Handler: Button 2 pressed (count: 10, GPIO: 13)[0m
+[0;32mI (417984) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (417984) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (417984) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (420774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (420774) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (425774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (425964) esp-tls: Failed to open new connection in specified timeout[0m
+[1;31mE (425964) transport_base: Failed to open a new connection[0m
+[1;31mE (425964) mqtt_client: Error transport connect[0m
+[1;31mE (425964) MQTT_App: MQTT error event[0m
+[1;31mE (425964) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (425974) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (430774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (435774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+���������������������������������������������������������������� (440774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)
+[1;31mE (442984) esp-tls: couldn't get hostname for :5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (442984) esp-tls: Failed to open new connection[0m
+[1;31mE (442984) transport_base: Failed to open a new connection[0m
+[1;31mE (442994) mqtt_client: Error transport connect[0m
+[1;31mE (442994) MQTT_App: MQTT error event[0m
+[1;31mE (442994) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (443004) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (445774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (450774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (455774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (460014) esp-tls: couldn't get hostname for :5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (460014) esp-tls: Failed to open new connection[0m
+[1;31mE (460014) transport_base: Failed to open a new connection[0m
+[1;31mE (460024) mqtt_client: Error transport connect[0m
+[1;31mE (460024) MQTT_App: MQTT error event[0m
+[1;31mE (460024) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (460034) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (460774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (465774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+���������������������������������������������������������������� (470774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)
+[0;32mI (475774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (477044) esp-tls: couldn't get hostname for :5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (477044) esp-tls: Failed to open new connection[0m
+[1;31mE (477044) transport_base: Failed to open a new connection[0m
+[1;31mE (477054) mqtt_client: Error transport connect[0m
+[1;31mE (477054) MQTT_App: MQTT error event[0m
+[1;31mE (477054) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (477064) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (480774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (480784) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (485774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (490774) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (494074) esp-tls: couldn't get hostname for :5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (494074) esp-tls: Failed to open new connection[0m
+[1;31mE (494074) transport_base: Failed to open a new connection[0m
+[1;31mE (494084) mqtt_client: Error transport connect[0m
+[1;31mE (494084) MQTT_App: MQTT error event[0m
+[1;31mE (494084) MQTT_App: TCP transport error - reconnecting...[0m
+[0;33mW (494094) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m

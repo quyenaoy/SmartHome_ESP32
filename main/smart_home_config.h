@@ -39,10 +39,15 @@
 // DHT11 sensor pin
 #define DHT11_GPIO          GPIO_NUM_4
 
+// Sound sensor pin (Analog input)
+#define SOUND_SENSOR_GPIO   GPIO_NUM_34  // ADC1_CH6
+
 // ===== Timing Configuration =====
-#define BUTTON_DEBOUNCE_MS      50      // Thời gian debounce cho nút bấm
-#define DHT11_READ_INTERVAL_MS  60000  // Đọc DHT11 mỗi 1 phút (60 giây)
-#define MQTT_PUBLISH_INTERVAL_MS 5000   // Gửi trạng thái mỗi 5 giây
+#define BUTTON_DEBOUNCE_MS          50      // Thời gian debounce cho nút bấm
+#define DHT11_READ_INTERVAL_MS      60000   // Đọc DHT11 mỗi 1 phút (60 giây)
+#define MQTT_PUBLISH_INTERVAL_MS    5000    // Gửi trạng thái mỗi 5 giây
+#define SOUND_SAMPLING_INTERVAL_MS  100     // Sampling âm thanh mỗi 100ms
+#define SOUND_THRESHOLD             1000    // Ngưỡng âm thanh (0-4095, 12-bit ADC)
 
 // ===== System Configuration =====
 #define NUM_LEDS            3

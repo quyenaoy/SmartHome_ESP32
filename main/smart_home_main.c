@@ -17,12 +17,16 @@
 #include "led_controller.h"
 #include "dht11_sensor.h"
 #include "button_handler.h"
+#include "sound_sensor.h"
 #include "smart_home_config.h"
 
 static const char *TAG = "SmartHome";
 
 // Flag to prevent echo loop when processing MQTT messages
 static bool s_processing_mqtt_message = false;
+
+// Flag to prevent multiple LED changes from single sound trigger
+static bool s_processing_sound_trigger = false;
 
 // Forward declarations
 static void subscribe_to_topics(void);
@@ -69,8 +73,8 @@ static void on_led_state_changed(int led_id, bool state)
 {
     ESP_LOGI(TAG, "LED %d state changed to: %s", led_id, state ? "ON" : "OFF");
 
-    // Only publish if NOT processing MQTT message (avoid echo loop)
-    if (!s_processing_mqtt_message && mqtt_app_is_connected()) {
+    // Only publish if NOT processing MQTT message or sound trigger (avoid echo loop)
+    if (!s_processing_mqtt_message && !s_processing_sound_trigger && mqtt_app_is_connected()) {
         const char *room_id = wifi_manager_get_room_id();
         if (room_id && strlen(room_id) > 0) {
             char device_msg[128];
@@ -116,6 +120,37 @@ static void on_dht11_reading(float temperature, float humidity)
                     temperature, humidity);
             mqtt_app_publish_status_topic(room_id, status_msg, MQTT_QOS, 0);
             ESP_LOGI(TAG, "Sensor data published to %s/status: %s", room_id, status_msg);
+        }
+    }
+}
+
+/**
+ * @brief Sound sensor trigger callback
+ * Called when sound level exceeds threshold - directly turns on all LEDs
+ */
+static void on_sound_trigger(int sound_level)
+{
+    ESP_LOGW(TAG, "Sound trigger activated! Level: %d - Turning on all LEDs", sound_level);
+    
+    // Set rebound flag to prevent LED state change callbacks from publishing back
+    s_processing_sound_trigger = true;
+    
+    // Directly turn on all 3 LEDs
+    led_controller_turn_on(0);  // LED 1
+    led_controller_turn_on(1);  // LED 2
+    led_controller_turn_on(2);  // LED 3
+    
+    // Clear rebound flag after LED changes
+    s_processing_sound_trigger = false;
+    
+    // Publish LED state to MQTT
+    if (mqtt_app_is_connected()) {
+        const char *room_id = wifi_manager_get_room_id();
+        if (room_id && strlen(room_id) > 0) {
+            char device_msg[128];
+            snprintf(device_msg, sizeof(device_msg), "{\"device1\":1,\"device2\":1,\"device3\":1}");
+            mqtt_app_publish_device_topic(room_id, device_msg, MQTT_QOS, 0);
+            ESP_LOGI(TAG, "LED state published after sound trigger: %s", device_msg);
         }
     }
 }
@@ -273,7 +308,12 @@ void app_main(void)
     ESP_ERROR_CHECK(dht11_sensor_init(DHT11_GPIO, on_dht11_reading));
     ESP_ERROR_CHECK(dht11_sensor_start_periodic(DHT11_READ_INTERVAL_MS));
     
-    // 4. MQTT App (must init BEFORE WiFi to avoid callback race condition)
+    // 4. Sound Sensor (Analog ADC input)
+    ESP_LOGI(TAG, "Initializing Sound Sensor...");
+    ESP_ERROR_CHECK(sound_sensor_init(SOUND_SENSOR_GPIO, SOUND_THRESHOLD, on_sound_trigger));
+    ESP_ERROR_CHECK(sound_sensor_start(SOUND_SAMPLING_INTERVAL_MS));
+    
+    // 5. MQTT App (must init BEFORE WiFi to avoid callback race condition)
     ESP_LOGI(TAG, "Initializing MQTT App...");
     ESP_ERROR_CHECK(mqtt_app_init(MQTT_BROKER_HOST, MQTT_BROKER_PORT, MQTT_USE_TLS,
                                   MQTT_USERNAME, MQTT_PASSWORD,
@@ -281,7 +321,7 @@ void app_main(void)
     // Register MQTT connected callback to re-subscribe on reconnect
     mqtt_app_set_connected_cb(on_mqtt_connected);
     
-    // 5. WiFi Manager (init and start - may trigger on_wifi_connected callback immediately)
+    // 6. WiFi Manager (init and start - may trigger on_wifi_connected callback immediately)
     ESP_LOGI(TAG, "Initializing WiFi Manager (provisioning capable)...");
     ESP_ERROR_CHECK(wifi_manager_init(on_wifi_connected, on_wifi_disconnected));
     // wifi_manager_start will either connect with stored creds or start AP portal at 192.168.4.1
@@ -302,6 +342,7 @@ void app_main(void)
     ESP_LOGI(TAG, "LED GPIOs: %d, %d, %d", LED1_GPIO, LED2_GPIO, LED3_GPIO);
     ESP_LOGI(TAG, "Button GPIOs: %d, %d, %d", BUTTON1_GPIO, BUTTON2_GPIO, BUTTON3_GPIO);
     ESP_LOGI(TAG, "DHT11 GPIO: %d", DHT11_GPIO);
+    ESP_LOGI(TAG, "Sound Sensor GPIO: %d (ADC, Threshold: %d)", SOUND_SENSOR_GPIO, SOUND_THRESHOLD);
     ESP_LOGI(TAG, "==========================================================");
     
     // Demo: Blink all LEDs once

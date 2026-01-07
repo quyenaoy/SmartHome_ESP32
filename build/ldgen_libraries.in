@@ -163,9 +163,11 @@ $<TARGET_FILE:__idf_mqtt>
 $<TARGET_FILE:idf::led_controller>
 $<TARGET_FILE:idf::dht11_sensor>
 $<TARGET_FILE:idf::button_handler>
+$<TARGET_FILE:idf::sound_sensor>
 $<TARGET_FILE:idf::main>
 $<TARGET_FILE:__idf_wifi_manager>
 $<TARGET_FILE:__idf_mqtt_app>
 $<TARGET_FILE:__idf_led_controller>
 $<TARGET_FILE:__idf_dht11_sensor>
 $<TARGET_FILE:__idf_button_handler>
+$<TARGET_FILE:__idf_sound_sensor>
