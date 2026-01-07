@@ -1,0 +1,1287 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:�ͅ���         Type ST Offset   Length
+[0;32mI (58) boot:  0 nvs              WiFi dets Jun  8 2016 00:22:57[0m
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (29) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jan  3 2026 23:15:03[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v1.0[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=350b8h (217272) map[0m
+[0;32mI (162) esp_image: segment 1: paddr=000450e0 vaddr=3ffb0000 size=03f2ch ( 16172) load[0m
+[0;32mI (169) esp_image: segment 2: paddr=00049014 vaddr=40080000 size=07004h ( 28676) load[0m
+[0;32mI (180) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=aada4h (699812) map[0m
+[0;32mI (419) esp_image: segment 4: paddr=000fadcc vaddr=40087004 size=11284h ( 70276) load[0m
+[0;32mI (447) esp_image: segment 5: paddr=0010c058 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (470) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (478) app_init: Project name:     smart_home[0m
+[0;32mI (482) app_init: App version:      b35f121-dirty[0m
+[0;32mI (487) app_init: Compile time:     Jan  7 2026 22:13:49[0m
+[0;32mI (492) app_init: ELF file SHA256:  df972644d...[0m
+[0;32mI (496) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (500) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (504) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (508) efuse_init: Chip rev:         v1.0[0m
+[0;32mI (512) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (518) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (523) heap_init: At 3FFB87C0 len 00027840 (158 KiB): DRAM[0m
+[0;32mI (529) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (534) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (540) heap_init: At 40098288 len 00007D78 (31 KiB): IRAM[0m
+[0;32mI (546) spi_flash: detected chip: winbond[0m
+[0;32mI (549) spi_flash: flash io: dio[0m
+[0;33mW (551) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (565) main_task: Started on CPU0[0m
+[0;32mI (575) main_task: Calling app_main()[0m
+[0;32mI (575) SmartHome: ==========================================================[0m
+[0;32mI (575) SmartHome:         Smart Home Light Switch - ESP32[0m
+[0;32mI (575) SmartHome: ==========================================================[0m
+[0;32mI (625) SmartHome: Initializing LED Controller...[0m
+[0;32mI (625) LED_Controller: LED 0 initialized on GPIO 25[0m
+[0;32mI (625) LED_Controller: LED 1 initialized on GPIO 26[0m
+[0;32mI (625) LED_Controller: LED 2 initialized on GPIO 27[0m
+[0;32mI (635) LED_Controller: LED controller initialized with 3 LEDs[0m
+[0;32mI (635) SmartHome: Initializing Button Handler...[0m
+[0;32mI (645) Button_Handler: Button 0 initialized on GPIO 32[0m
+[1;31mE (645) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (655) Button_Handler: Button 1 initialized on GPIO 33[0m
+[1;31mE (665) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (665) Button_Handler: Button 2 initialized on GPIO 13[0m
+[0;32mI (675) Button_Handler: Button handler initialized with 3 buttons (debounce: 50 ms)[0m
+[0;32mI (685) SmartHome: Initializing DHT11 Sensor...[0m
+[0;32mI (685) DHT11_Sensor: DHT11 sensor initialized on GPIO 4[0m
+[1;31mE (705) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (705) DHT11_Sensor: Started periodic reading every 60000 ms[0m
+[0;32mI (705) SmartHome: Initializing Sound Sensor...[0m
+[0;32mI (715) SoundSensor: Sound sensor initialized on GPIO 34 (ADC1_CH6), threshold=1000[0m
+[0;32mI (715) SoundSensor: Sound monitoring started (sampling every 100 ms)[0m
+[0;32mI (725) SmartHome: Initializing MQTT App...[0m
+[0;32mI (725) MQTT_App: TLS enabled with certificate bundle[0m
+[0;32mI (735) MQTT_App: MQTT authentication enabled - Username: quyen[0m
+[0;32mI (735) MQTT_App: MQTT app initialized - Broker: mqtts://5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883, Client ID: esp32_room_01[0m
+[0;32mI (755) SmartHome: Initializing WiFi Manager (provisioning capable)...[0m
+[0;32mI (775) wifi:wifi driver task: 3ffc4aa4, prio:23, stack:6656, core=0[0m
+[0;32mI (795) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (795) wifi:wifi certification version: v7.0[0m
+[0;32mI (795) wifi:config NVS flash: enabled[0m
+[0;32mI (795) wifi:config nano formatting: disabled[0m
+[0;32mI (795) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (805) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (805) wifi:Init management short buffer num: 32[0m
+[0;32mI (815) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (815) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (815) wifi:Init static rx buffer num: 10[0m
+[0;32mI (825) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (825) wifi_init: rx ba win: 6[0m
+[0;32mI (825) wifi_init: accept mbox: 6[0m
+[0;32mI (835) wifi_init: tcpip mbox: 32[0m
+[0;32mI (835) wifi_init: udp mbox: 6[0m
+[0;32mI (835) wifi_init: tcp mbox: 6[0m
+[0;32mI (845) wifi_init: tcp tx win: 5760[0m
+[0;32mI (845) wifi_init: tcp rx win: 5760[0m
+[0;32mI (845) wifi_init: tcp mss: 1440[0m
+[0;32mI (855) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (855) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (865) WiFi_Manager: Loaded WiFi credentials from NVS (SSID: MattdzIT2, Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (865) WiFi_Manager: Starting WiFi STA with stored credentials...[0m
+[0;32mI (875) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=0)[0m
+[0;32mI (1385) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (1455) wifi:mode : sta (3c:71:bf:fd:09:fc)[0m
+[0;32mI (1455) wifi:enable tsf[0m
+[1;31mE (1465) wifi:sta is connecting, return error[0m
+[0;32mI (1465) WiFi_Manager: Waiting for WiFi connection or failure...[0m
+[0;32mI (1545) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1545) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1565) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1605) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1655) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1665) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1665) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1665) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (1665) WiFi_Manager: Retry connecting to WiFi (1/5)...[0m
+[0;33mW (4085) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (4085) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (4085) WiFi_Manager: Retry connecting to WiFi (2/5)...[0m
+[0;32mI (4115) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (4115) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (4145) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (4205) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (5015) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (5025) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (5025) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (5025) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (5025) WiFi_Manager: Retry connecting to WiFi (3/5)...[0m
+[0;32mI (5615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (7445) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (7445) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (7445) WiFi_Manager: Retry connecting to WiFi (4/5)...[0m
+[0;32mI (7465) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7465) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (7485) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (7495) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (7605) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (7615) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (7615) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (7615) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (7615) WiFi_Manager: Retry connecting to WiFi (5/5)...[0m
+[0;33mW (10035) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (10035) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (10045) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;33mW (10045) WiFi_Manager: Starting provisioning AP 'ESP32-Setup' (open network)[0m
+[0;32mI (10055) wifi:flush txq[0m
+[0;32mI (10055) wifi:stop sw txq[0m
+[0;32mI (10055) wifi:lmac stop hw txq[0m
+[0;33mW (10065) WiFi_Manager: Connection failed or timed out, starting provisioning AP[0m
+[0;32mI (10065) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (10085) wifi:mode : sta (3c:71:bf:fd:09:fc) + softAP (3c:71:bf:fd:09:fd)[0m
+[0;32mI (10085) wifi:enable tsf[0m
+[0;32mI (10085) wifi:Total power save buffer number: 16[0m
+[0;32mI (10085) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (10095) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (10095) SmartHome: MQTT will start automatically when WiFi connection is established[0m
+[0;32mI (10095) WiFi_Portal: HTTP provisioning server started at http://192.168.4.1/[0m
+[0;32mI (10105) WiFi_Manager: Connect to WiFi 'ESP32-Setup' and open http://192.168.4.1 to configure.[0m
+[0;32mI (10105) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (10125) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (10135) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (10135) wifi:ap channel adjust o:1,1 n:6,2[0m
+[0;32mI (10145) wifi:new:<6,0>, old:<1,1>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10155) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (10135) SmartHome: ==========================================================[0m
+[1;31mE (10165) wifi:sta is connecting, cannot set config[0m
+[0;32mI (10165) SmartHome:         Smart Home System Started Successfully![0m
+[0;33mW (10165) WiFi_Manager: Failed to set WiFi config: ESP_ERR_WIFI_STATE[0m
+[0;32mI (10175) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (10185) SmartHome: ==========================================================[0m
+[0;32mI (10185) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (10195) SmartHome: WiFi: provisioning portal if no stored credentials (SSID: ESP32-Setup)[0m
+[0;32mI (10205) SmartHome: MQTT Broker: 5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883 (TLS: Yes)[0m
+[0;32mI (10205) SmartHome: LED GPIOs: 25, 26, 27[0m
+[0;32mI (10215) SmartHome: Button GPIOs: 32, 33, 13[0m
+[0;32mI (10215) SmartHome: DHT11 GPIO: 4[0m
+[0;32mI (10225) SmartHome: Sound Sensor GPIO: 34 (ADC, Threshold: 1000)[0m
+[0;32mI (10225) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (10235) SmartHome: ==========================================================[0m
+[0;32mI (10235) SmartHome: Running LED test...[0m
+[0;32mI (10245) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (10245) LED_Controller: Turning all LEDs on[0m
+[0;33mW (10245) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (10255) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (10265) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (10265) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (10275) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (10275) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (10285) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (10285) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (10295) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (10295) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (10615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (10805) LED_Controller: Turning all LEDs off[0m
+[0;32mI (10805) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (10805) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (10805) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (10805) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (10815) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (10815) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (10825) SmartHome: System ready. Press buttons to control LEDs![0m
+[0;32mI (10825) main_task: Returned from app_main()[0m
+[0;32mI (15615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (20615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (25615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (30615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (35615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (40185) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (40185) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (40205) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (40205) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (40225) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (40235) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (40275) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (40285) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (40285) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (40285) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (40285) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (40295) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (40615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (45615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (50615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (55615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (60615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (60715) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (65615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (70185) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (70185) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (70195) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (70195) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (70225) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (70255) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (70295) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (70305) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (70305) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (70305) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (70305) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (70315) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (70615) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (71615) SoundSensor: Sound threshold exceeded! Level: 4095 (Threshold: 1000)[0m
+[0;33mW (71615) SmartHome: Sound trigger activated! Level: 4095 - Turning on all LEDs[0m
+[0;32mI (71615) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (71615) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (71625) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (71625) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (71635) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (71635) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (71735) SoundSensor: Sound level returned to normal: 0[0m
+[0;32mI (75635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (75655) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (75655) wifi:station: 5e:08:b1:fe:71:d9 join, AID=1, bgn, 20[0m
+[0;32mI (76095) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (80635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (85635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (90395) WiFi_Portal: ========================================[0m
+[0;32mI (90395) WiFi_Portal: Received POST request to /configure[0m
+[0;32mI (90395) WiFi_Portal: Content-Length: 78[0m
+[0;32mI (90395) WiFi_Portal: Received 78 bytes[0m
+[0;32mI (90395) WiFi_Portal: Raw payload: {"ssid":"MattdzIT2","password":"19032001","roomId":"695e6043ce75c5c54b5d9e7e"}[0m
+[0;32mI (90405) WiFi_Portal: === Configuration Received ===[0m
+[0;32mI (90415) WiFi_Portal:   SSID: MattdzIT2[0m
+[0;32mI (90415) WiFi_Portal:   Password: ***[0m
+[0;32mI (90425) WiFi_Portal:   Room ID: 695e6043ce75c5c54b5d9e7e[0m
+[0;32mI (90425) WiFi_Portal: =============================[0m
+[0;32mI (90435) WiFi_Manager: Received config from portal: MattdzIT2 (Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (90455) WiFi_Manager: Saved config to NVS (SSID: MattdzIT2, Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (90455) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (90555) WiFi_Portal: Configuration saved successfully, initiating WiFi connection[0m
+[0;32mI (90635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (90835) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (90835) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (90845) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (90895) wifi:<ba-add>idx:2 (ifx:1, 5e:08:b1:fe:71:d9), tid:0, ssn:16, winSize:64[0m
+[0;32mI (90905) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (90955) wifi:connected with MattdzIT2, aid = 1, channel 6, BW20, bssid = ae:38:cf:1c:7a:e2[0m
+[0;32mI (90955) wifi:security: WPA2-PSK, phy: bgn, rssi: -70[0m
+[0;32mI (90975) wifi:pm start, type: 1[0m
+
+[0;32mI (90975) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (91025) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (92485) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (92485) WiFi_Manager: Got IP: 172.20.10.2[0m
+[0;32mI (92485) WiFi_Manager: Successfully connected from portal![0m
+[0;32mI (92485) WiFi_Manager: Shutting down portal and switching to STA mode[0m
+[0;32mI (92595) WiFi_Portal: HTTP server stopped[0m
+[0;32mI (92595) wifi:station: 5e:08:b1:fe:71:d9 leave, AID = 1, reason = 2, bss_flags is 33721459, bss:0x3ffb9b74[0m
+[0;32mI (92595) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (92605) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (92605) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (92615) wifi:mode : sta (3c:71:bf:fd:09:fc)[0m
+[0;32mI (92625) SmartHome: === WiFi Connected Callback Triggered ===[0m
+[0;32mI (92625) SmartHome: Starting MQTT client...[0m
+[0;32mI (92625) MQTT_App: Starting MQTT client connection...[0m
+[0;32mI (92625) MQTT_App: MQTT app start command sent successfully[0m
+[0;32mI (92635) SmartHome: MQTT client started successfully[0m
+[0;32mI (92755) wifi:<ba-add>idx:0 (ifx:0, ae:38:cf:1c:7a:e2), tid:0, ssn:2, winSize:64[0m
+[0;32mI (93815) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (94635) SmartHome: Subscribing to MQTT topics...[0m
+[0;33mW (94635) SmartHome: MQTT not connected, skipping subscription[0m
+[0;32mI (95235) MQTT_App: MQTT connected to broker[0m
+[0;32mI (95235) SmartHome: MQTT connected callback - subscribing[0m
+[0;32mI (95235) MQTT_App: Subscribing to dynamic topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (95245) MQTT_App: Subscribed to topic: 695e6043ce75c5c54b5d9e7e/device, msg_id=37990[0m
+[0;32mI (95245) SmartHome: Subscribed to device topic with roomId=695e6043ce75c5c54b5d9e7e[0m
+[0;32mI (95635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (95655) MQTT_App: MQTT subscribed, msg_id=37990[0m
+[0;32mI (100635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (105635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (110635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (115635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (120635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (120725) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (125635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (130135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (130135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (130605) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (130605) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (130605) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (130615) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (130635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (130635) MQTT_App: MQTT published, msg_id=19838[0m
+[0;32mI (135635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (140635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (145635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (150635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (155635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (160635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (165635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (170635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (175635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (180635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (180735) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (185635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (190635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (195635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (200635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (205635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (210635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (215635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (220635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (225635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (230635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (235635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (240635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (240745) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (245635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (250135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (250135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (250635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (250685) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (250685) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (250695) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (250705) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (250715) MQTT_App: MQTT published, msg_id=54604[0m
+[0;32mI (255635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (260635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (265635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (270635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (275635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (280635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (285635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (290635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (295635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (300635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (300755) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (305635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (310635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (315635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (320635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (325635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (330635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (335635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (340635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (345635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (350635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (355635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (360635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (360765) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (365635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (370135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (370135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (370595) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (370595) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (370605) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (370605) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (370625) MQTT_App: MQTT published, msg_id=11266[0m
+[0;32mI (370635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (375635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (380635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (385635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (390635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (395635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (400635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (405635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (410635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (415635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (420635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (420775) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (425635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (430635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (435635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (440635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (445635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (450635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (455635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (460635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (465635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (470635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (475635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (480635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (480785) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (485635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (490135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (490135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (490535) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (490535) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (490535) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (490545) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (490565) MQTT_App: MQTT published, msg_id=39672[0m
+[0;32mI (490635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (495635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (500635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (505635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (510635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (515635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (520635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (525635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (530635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (535635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (540635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (540795) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (545635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (550635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (555635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (560635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (565635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (570635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (575635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (580635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (585635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (590635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (595635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (600635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (600805) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (605635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (610135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (610135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (610635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (610925) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (610935) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (610935) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (610945) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (610965) MQTT_App: MQTT published, msg_id=40827[0m
+[0;32mI (615635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (620635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (625635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (630635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (635635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (640635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (645635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (650635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (655635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (660635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (660815) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (665635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (670635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (675635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (680635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (685635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (690635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (695635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (700635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (705635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (710635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (715635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (720635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (720655) wifi:bcn_timeout,ap_probe_send_start[0m
+[1;31mE (720825) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (723155) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (723155) wifi:state: run -> init (0xc800)[0m
+[0;32mI (723175) wifi:pm stop, total sleep time: 550869523 us / 632197977 us[0m
+
+[0;32mI (723175) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (723175) wifi:new:<6,0>, old:<6,2>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (723185) SmartHome: === WiFi Disconnected ===[0m
+[1;31mE (723185) esp-tls-mbedtls: read error :-0x004C[0m
+[1;31mE (723185) transport_base: esp_tls_conn_read error, errno=Software caused connection abort[0m
+[1;31mE (723195) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[1;31mE (723205) MQTT_App: MQTT error event[0m
+[1;31mE (723205) MQTT_App: TCP transport error - reconnecting...[0m
+[1;31mE (723215) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (723225) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (723225) MQTT_App: MQTT app stopped[0m
+[0;32mI (723225) WiFi_Manager: Retry connecting to WiFi (1/5)...[0m
+[0;32mI (723255) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (723265) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (723295) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (723305) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (723345) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (723355) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (723355) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (723355) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (723355) WiFi_Manager: Retry connecting to WiFi (2/5)...[0m
+[0;32mI (725635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (725775) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (725775) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (725775) WiFi_Manager: Retry connecting to WiFi (3/5)...[0m
+[0;32mI (725825) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (725825) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (725835) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (725845) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (725885) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (725895) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (725895) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (725895) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (725895) WiFi_Manager: Retry connecting to WiFi (4/5)...[0m
+[0;33mW (728315) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (728315) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (728315) WiFi_Manager: Retry connecting to WiFi (5/5)...[0m
+[0;32mI (728335) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (728345) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (728375) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (728395) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (728825) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (728835) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (728835) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (728835) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (728835) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;33mW (728845) WiFi_Manager: Starting provisioning AP 'ESP32-Setup' (open network)[0m
+[0;32mI (728855) wifi:flush txq[0m
+[0;32mI (728855) wifi:stop sw txq[0m
+[0;32mI (728855) wifi:lmac stop hw txq[0m
+[0;32mI (728875) wifi:mode : sta (3c:71:bf:fd:09:fc) + softAP (3c:71:bf:fd:09:fd)[0m
+[0;32mI (728885) wifi:enable tsf[0m
+[0;32mI (728885) wifi:Total power save buffer number: 16[0m
+[0;32mI (728885) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (728885) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (728895) WiFi_Portal: HTTP provisioning server started at http://192.168.4.1/[0m
+[0;32mI (728895) WiFi_Manager: Connect to WiFi 'ESP32-Setup' and open http://192.168.4.1 to configure.[0m
+[0;32mI (728895) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (728915) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (728925) wifi:I (728925) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+ap channel adjust o:1,1 n:6,2
+[0;32mI (728935) wifi:new:<6,0>, old:<1,1>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (728945) wifi:state: init -> auth (0xb0)[0m
+[1;31mE (728955) wifi:sta is connecting, cannot set config[0m
+[0;33mW (728955) WiFi_Manager: Failed to set WiFi config: ESP_ERR_WIFI_STATE[0m
+[0;32mI (728955) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (728965) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (729655) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (729665) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (729665) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (729665) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (729665) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (729675) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (730635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (735635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (740635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (745635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (750635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (755635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (758955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (758955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (758965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (758965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (758985) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (758995) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (759705) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (759715) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (759715) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (759715) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (759715) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (759725) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (760635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (765635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (770635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (775635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (780635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (780835) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (785635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (788955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (788955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (788965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (788965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (788975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (788995) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (789755) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (789765) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (789765) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (789765) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (789765) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (789775) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (790635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (795635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (800635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (805635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (810635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (815635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (818955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (818955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (818965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (818965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (818975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (818985) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (819795) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (819805) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (819805) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (819805) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (819805) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (819815) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (820635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (825635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (830635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (835635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (840635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (840845) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (845635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (848955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (848955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (848965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (848965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (848975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (848995) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (849055) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (849075) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (849075) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (849075) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (849075) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (849085) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (850635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (855635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (860635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (865635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (870635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (875635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (878955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (878955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (878965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (878975) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (878985) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (879005) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (879025) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (879045) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (879045) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (879045) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (879045) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (879055) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (880635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (885635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (890635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (895635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (900635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (900855) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (905635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (908955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (908955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (909015) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (909025) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (909045) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (909055) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (909075) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (909085) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (909085) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (909085) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (909085) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (909095) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (910635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (915635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (920635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (925635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (930635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (935635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (938955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (938955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (938965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (938965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (938975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (938985) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (939035) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (939045) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (939045) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (939045) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (939045) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (939055) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (940635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (945635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (950635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (955635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (960635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (960865) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (965635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (968955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (968955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (968965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (968965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (968975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (969005) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (969045) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (969055) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (969055) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (969055) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (969055) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (969065) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (970635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (975635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (980635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (985635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (990635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (995635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (998955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (998955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (998965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (998965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (998975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (998985) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1000165) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1000175) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1000175) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1000175) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1000175) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1000185) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1000635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1005635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1010635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1015635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1020635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1020875) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1025635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1028955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1028955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1028965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1028965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1028975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1028985) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1030635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1031015) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1031025) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1031025) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1031025) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1031035) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1031035) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1035635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1040635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1045635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1050635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1055635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1058955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1058955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1058975) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1058975) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1058995) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1059005) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1059035) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1059045) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1059045) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1059045) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1059045) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1059055) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1060635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1065635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1070635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1075635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1080635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1080885) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1085635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1088955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1088955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1088965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1088965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1088975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1088995) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1089355) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1089365) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1089365) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1089365) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1089365) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1089375) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1090635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1095635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1100635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1105635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1110635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1115635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1118955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1118955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1118965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1118965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1118985) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1118985) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1119375) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1119395) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1119395) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1119395) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1119395) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1119405) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1120635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1125635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1130635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1135635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1140635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1140895) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1142185) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1142195) wifi:station: 5e:08:b1:fe:71:d9 join, AID=1, bgn, 20[0m
+[0;32mI (1142615) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (1145635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1148955) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1148955) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1148965) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1148965) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1148975) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1148985) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1149015) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1149025) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1149025) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1149025) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1149025) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1149035) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1150635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1155635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1160635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1164325) WiFi_Portal: ========================================[0m
+[0;32mI (1164325) WiFi_Portal: Received POST request to /configure[0m
+[0;32mI (1164325) WiFi_Portal: Content-Length: 78[0m
+[0;32mI (1164325) WiFi_Portal: Received 78 bytes[0m
+[0;32mI (1164335) WiFi_Portal: Raw payload: {"ssid":"MattdzIT2","password":"19032007","roomId":"695e6043ce75c5c54b5d9e7e"}[0m
+[0;32mI (1164345) WiFi_Portal: === Configuration Received ===[0m
+[0;32mI (1164345) WiFi_Portal:   SSID: MattdzIT2[0m
+[0;32mI (1164355) WiFi_Portal:   Password: ***[0m
+[0;32mI (1164355) WiFi_Portal:   Room ID: 695e6043ce75c5c54b5d9e7e[0m
+[0;32mI (1164355) WiFi_Portal: =============================[0m
+[0;32mI (1164365) WiFi_Manager: Received config from portal: MattdzIT2 (Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (1164385) WiFi_Manager: Saved config to NVS (SSID: MattdzIT2, Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (1164385) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1164435) WiFi_Portal: Configuration saved successfully, initiating WiFi connection[0m
+[0;32mI (1164755) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1164755) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1164765) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1164785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1164815) wifi:<ba-add>idx:2 (ifx:1, 5e:08:b1:fe:71:d9), tid:0, ssn:16, winSize:64[0m
+[0;32mI (1164855) wifi:connected with MattdzIT2, aid = 1, channel 6, BW20, bssid = a6:38:ae:5b:73:93[0m
+[0;32mI (1164855) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (1164865) wifi:pm start, type: 1[0m
+
+[0;32mI (1164915) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1165635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1166355) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (1166355) WiFi_Manager: Got IP: 172.20.10.2[0m
+[0;32mI (1166355) WiFi_Manager: Successfully connected from portal![0m
+[0;32mI (1166355) WiFi_Manager: Shutting down portal and switching to STA mode[0m
+[0;32mI (1166465) WiFi_Portal: HTTP server stopped[0m
+[0;32mI (1166465) wifi:station: 5e:08:b1:fe:71:d9 leave, AID = 1, reason = 2, bss_flags is 33721443, bss:0x3ffcf24c[0m
+[0;32mI (1166465) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1166475) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (1166475) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1166485) wifi:mode : sta (3c:71:bf:fd:09:fc)[0m
+[0;32mI (1166495) SmartHome: === WiFi Connected Callback Triggered ===[0m
+[0;32mI (1166495) SmartHome: Starting MQTT client...[0m
+[0;32mI (1166495) MQTT_App: Starting MQTT client connection...[0m
+[0;32mI (1166505) MQTT_App: MQTT app start command sent successfully[0m
+[0;32mI (1166505) SmartHome: MQTT client started successfully[0m
+[0;32mI (1166595) wifi:<ba-add>idx:0 (ifx:0, a6:38:ae:5b:73:93), tid:0, ssn:2, winSize:64[0m
+[0;32mI (1168515) SmartHome: Subscribing to MQTT topics...[0m
+[0;33mW (1168515) SmartHome: MQTT not connected, skipping subscription[0m
+[0;32mI (1168915) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (1170635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1172505) MQTT_App: MQTT connected to broker[0m
+[0;32mI (1172505) SmartHome: MQTT connected callback - subscribing[0m
+[0;32mI (1172505) MQTT_App: Subscribing to dynamic topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1172515) MQTT_App: Subscribed to topic: 695e6043ce75c5c54b5d9e7e/device, msg_id=56735[0m
+[0;32mI (1172515) SmartHome: Subscribed to device topic with roomId=695e6043ce75c5c54b5d9e7e[0m
+[0;32mI (1173525) MQTT_App: MQTT subscribed, msg_id=56735[0m
+[0;32mI (1175635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1180635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1185635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1190635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1195635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1200635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1200905) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1205635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1210135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1210135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (1210635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1215635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1215875) wifi:bcn_timeout,ap_probe_send_start[0m
+[0;32mI (1218385) wifi:ap_probe_send over, reset wifi status to disassoc[0m
+[0;32mI (1218385) wifi:state: run -> init (0xc800)[0m
+[0;32mI (1218395) wifi:pm stop, total sleep time: 36974251 us / 53527863 us[0m
+
+[0;32mI (1218395) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (1218395) wifi:new:<6,0>, old:<6,2>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1218405) SmartHome: === WiFi Disconnected ===[0m
+[1;31mE (1218405) esp-tls-mbedtls: read error :-0x004C[0m
+[1;31mE (1218405) transport_base: esp_tls_conn_read error, errno=Software caused connection abort[0m
+[1;31mE (1218415) mqtt_client: esp_mqtt_handle_transport_read_error: transport_read() error: errno=113[0m
+[1;31mE (1218425) MQTT_App: MQTT error event[0m
+[1;31mE (1218425) MQTT_App: TCP transport error - reconnecting...[0m
+[1;31mE (1218435) mqtt_client: mqtt_process_receive: mqtt_message_receive() returned -2[0m
+[0;33mW (1218445) MQTT_App: MQTT disconnected from broker - will auto-reconnect[0m
+[0;32mI (1218445) MQTT_App: MQTT app stopped[0m
+[0;32mI (1218455) WiFi_Manager: Retry connecting to WiFi (1/5)...[0m
+[0;32mI (1218475) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1218475) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1218485) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1218515) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1218545) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1218565) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1218565) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1218565) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (1218565) WiFi_Manager: Retry connecting to WiFi (2/5)...[0m
+[0;32mI (1220635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;33mW (1220995) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1220995) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (1220995) WiFi_Manager: Retry connecting to WiFi (3/5)...[0m
+[0;32mI (1221005) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1221005) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1221035) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1221045) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1221075) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1221085) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1221085) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1221085) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (1221085) WiFi_Manager: Retry connecting to WiFi (4/5)...[0m
+[0;33mW (1223505) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1223515) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (1223515) WiFi_Manager: Retry connecting to WiFi (5/5)...[0m
+[0;32mI (1223545) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1223545) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1223555) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1223575) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1223605) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1223615) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1223615) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1223615) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1223625) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;33mW (1223625) WiFi_Manager: Starting provisioning AP 'ESP32-Setup' (open network)[0m
+[0;32mI (1223635) wifi:flush txq[0m
+[0;32mI (1223635) wifi:stop sw txq[0m
+[0;32mI (1223635) wifi:lmac stop hw txq[0m
+[0;32mI (1223655) wifi:mode : sta (3c:71:bf:fd:09:fc) + softAP (3c:71:bf:fd:09:fd)[0m
+[0;32mI (1223665) wifi:enable tsf[0m
+[0;32mI (1223665) wifi:Total power save buffer number: 16[0m
+[0;32mI (1223665) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1223665) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1223675) WiFi_Portal: HTTP provisioning server started at http://192.168.4.1/[0m
+[0;32mI (1223675) WiFi_Manager: Connect to WiFi 'ESP32-Setup' and open http://192.168.4.1 to configure.[0m
+[0;32mI (1223675) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1223695) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1223705) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1223715) wifi:ap channel adjust o:1,1 n:6,2[0m
+[0;32mI (1223715) wifi:new:<6,0>, old:<1,1>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1223725) wifi:state: init -> auth (0xb0)[0m
+[1;31mE (1223735) wifi:sta is connecting, cannot set config[0m
+[0;33mW (1223735) WiFi_Manager: Failed to set WiFi config: ESP_ERR_WIFI_STATE[0m
+[0;32mI (1223735) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1223745) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1223775) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1223785) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1223785) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1223785) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1223785) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1223795) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1225635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1230635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1235635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1240635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1245635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1250635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1253735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1253735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1253755) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1253755) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1253775) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1253785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1253835) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1253845) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1253845) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1253845) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1253845) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1253855) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1255635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1260635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1260915) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1265635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1270635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1275635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1280635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1283735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1283735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1283755) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1283755) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1283775) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1283785) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1283895) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1283905) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1283905) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1283905) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1283905) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1283915) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1285635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1290635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1295635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1300635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1305635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1310635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1313735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1313735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1313745) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1313745) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1313755) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1313775) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1314055) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1314065) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1314065) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1314065) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1314065) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1314075) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1315635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1320635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1320925) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1325635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1330635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1335635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1340635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1343735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1343735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1343745) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1343745) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1343765) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1343775) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1344095) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1344115) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1344115) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1344115) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1344115) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1344125) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1345635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1350635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1355635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1360635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1365635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1370635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1373735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1373735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1373745) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1373745) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1373755) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1373775) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1373805) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1373815) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1373815) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1373815) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1373815) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1373825) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1375635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1380635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1380935) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1385635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1390635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1395635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1400635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1403735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1403735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1403755) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1403755) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1403765) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1403775) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1403895) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1403905) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1403905) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1403905) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1403905) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1403915) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1405635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1410635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1415635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1420635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1425635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1430635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1433735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1433735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1433745) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1433745) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1433755) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1433765) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1433795) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1433805) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1433805) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1433805) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1433815) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1433815) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1435635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1440635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1440945) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1445635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1450635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1455635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1460635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1463735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1463735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1463745) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1463745) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1463755) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1463765) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1464405) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1464415) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1464415) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1464415) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1464415) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1464425) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1465635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1470635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1475635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1480635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1483905) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1483905) wifi:station: 5e:08:b1:fe:71:d9 join, AID=1, bgn, 20[0m
+[0;32mI (1484325) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (1485635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1490635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1493735) WiFi_Manager: Periodic reconnect attempt to stored WiFi: MattdzIT2[0m
+[0;32mI (1493735) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1493745) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1493745) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1493755) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1493765) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1493825) wifi:state: run -> init (0x2c0)[0m
+[0;32mI (1493835) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (1493835) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (1493835) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (1493835) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (1493845) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (1495635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1497215) WiFi_Portal: ========================================[0m
+[0;32mI (1497215) WiFi_Portal: Received POST request to /configure[0m
+[0;32mI (1497215) WiFi_Portal: Content-Length: 78[0m
+[0;32mI (1497225) WiFi_Portal: Received 78 bytes[0m
+[0;32mI (1497225) WiFi_Portal: Raw payload: {"ssid":"MattdzIT2","password":"19032008","roomId":"695e6043ce75c5c54b5d9e7e"}[0m
+[0;32mI (1497235) WiFi_Portal: === Configuration Received ===[0m
+[0;32mI (1497235) WiFi_Portal:   SSID: MattdzIT2[0m
+[0;32mI (1497245) WiFi_Portal:   Password: ***[0m
+[0;32mI (1497245) WiFi_Portal:   Room ID: 695e6043ce75c5c54b5d9e7e[0m
+[0;32mI (1497255) WiFi_Portal: =============================[0m
+[0;32mI (1497255) WiFi_Manager: Received config from portal: MattdzIT2 (Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (1497275) WiFi_Manager: Saved config to NVS (SSID: MattdzIT2, Room: 695e6043ce75c5c54b5d9e7e)[0m
+[0;32mI (1497275) WiFi_Manager: Configuring STA for SSID: MattdzIT2 (keep_portal=1)[0m
+[0;32mI (1497325) WiFi_Portal: Configuration saved successfully, initiating WiFi connection[0m
+[0;32mI (1497605) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1497605) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1497615) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1497655) wifi:<ba-add>idx:2 (ifx:1, 5e:08:b1:fe:71:d9), tid:0, ssn:16, winSize:64[0m
+[0;32mI (1497665) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1497735) wifi:connected with MattdzIT2, aid = 1, channel 6, BW20, bssid = 1a:73:bd:f7:de:e2[0m
+[0;32mI (1497735) wifi:security: WPA2-PSK, phy: bgn, rssi: -49[0m
+[0;32mI (1497745) wifi:pm start, type: 1[0m
+
+[0;32mI (1497825) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1499275) esp_netif_handlers: sta ip: 172.20.10.2, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (1499275) WiFi_Manager: Got IP: 172.20.10.2[0m
+[0;32mI (1499275) WiFi_Manager: Successfully connected from portal![0m
+[0;32mI (1499275) WiFi_Manager: Shutting down portal and switching to STA mode[0m
+[0;32mI (1499385) WiFi_Portal: HTTP server stopped[0m
+[0;32mI (1499385) wifi:station: 5e:08:b1:fe:71:d9 leave, AID = 1, reason = 2, bss_flags is 33721459, bss:0x3ffcc77c[0m
+[0;32mI (1499385) wifi:new:<6,0>, old:<6,2>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1499395) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (1499395) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1499405) wifi:mode : sta (3c:71:bf:fd:09:fc)[0m
+[0;32mI (1499415) SmartHome: === WiFi Connected Callback Triggered ===[0m
+[0;32mI (1499415) SmartHome: Starting MQTT client...[0m
+[0;32mI (1499415) MQTT_App: Starting MQTT client connection...[0m
+[0;32mI (1499425) MQTT_App: MQTT app start command sent successfully[0m
+[0;32mI (1499425) SmartHome: MQTT client started successfully[0m
+[0;32mI (1499515) wifi:<ba-add>idx:0 (ifx:0, 1a:73:bd:f7:de:e2), tid:0, ssn:2, winSize:64[0m
+[0;32mI (1500635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1500645) esp-x509-crt-bundle: Certificate validated[0m
+[1;31mE (1500955) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1501435) SmartHome: Subscribing to MQTT topics...[0m
+[0;33mW (1501435) SmartHome: MQTT not connected, skipping subscription[0m
+[0;32mI (1502035) MQTT_App: MQTT connected to broker[0m
+[0;32mI (1502035) SmartHome: MQTT connected callback - subscribing[0m
+[0;32mI (1502035) MQTT_App: Subscribing to dynamic topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1502045) MQTT_App: Subscribed to topic: 695e6043ce75c5c54b5d9e7e/device, msg_id=4579[0m
+[0;32mI (1502055) SmartHome: Subscribed to device topic with roomId=695e6043ce75c5c54b5d9e7e[0m
+[0;32mI (1502445) MQTT_App: MQTT subscribed, msg_id=4579[0m
+[0;32mI (1505635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1510635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1515635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1520635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1525635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1530635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1535635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1540635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1545635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1550635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1555635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1560635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1560965) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1565635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1570135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1570135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (1570545) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1570545) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (1570555) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (1570555) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (1570575) MQTT_App: MQTT published, msg_id=33284[0m
+[0;32mI (1570635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1575635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1580635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1585635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1590635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1595635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1600635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1605635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1610635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1615635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1620635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1620975) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1625635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1630635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1635635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1640635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1645635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1650635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1655635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1660635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1665635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1670635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1675635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1680635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1680985) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1685635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1690135) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1690135) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (1690635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1690665) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1690665) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (1690675) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (1690675) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (1690695) MQTT_App: MQTT published, msg_id=35054[0m
+[0;32mI (1695635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1700635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1705635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1710635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1715635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1720635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1725635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1730635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1735635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1740635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1740995) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1745635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1750635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1755635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1760635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1765635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1770635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1775635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1780635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1785635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1790635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1795635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1800635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[1;31mE (1801005) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (1805635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1810145) MQTT_App: Publishing to device topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1810145) SmartHome: Periodic LED state published to 695e6043ce75c5c54b5d9e7e/device: {"device1":1,"device2":1,"device3":1}[0m
+[0;32mI (1810475) MQTT_App: MQTT message received - Topic: 695e6043ce75c5c54b5d9e7e/device[0m
+[0;32mI (1810475) SmartHome: MQTT Message - Topic: 695e6043ce75c5c54b5d9e7e/device, Data: {"device1":1,"device2":1,"device3":1} (len=37)[0m
+[0;32mI (1810485) SmartHome: Processing command from 695e6043ce75c5c54b5d9e7e/device (rebound flag set)[0m
+[0;32mI (1810495) SmartHome: Command processing complete (rebound flag cleared)[0m
+[0;32mI (1810505) MQTT_App: MQTT published, msg_id=50748[0m
+[0;32mI (1810635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1815635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1820635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1825635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1830635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1835635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1840635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1845635) SoundSensor: Sound level from GPIO34: 0 (Threshold: 1000)[0m
+[0;32mI (1850635) Sou
