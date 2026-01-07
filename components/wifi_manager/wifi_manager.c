@@ -10,7 +10,6 @@
 #include <string.h>
 
 static const char *TAG = "WiFi_Manager";
-
 #define WIFI_CONNECTED_BIT BIT0
 #define WIFI_FAIL_BIT      BIT1
 #define MAX_RETRY          5

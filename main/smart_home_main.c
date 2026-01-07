@@ -75,7 +75,7 @@ static void on_led_state_changed(int led_id, bool state)
         if (room_id && strlen(room_id) > 0) {
             char device_msg[128];
             snprintf(device_msg, sizeof(device_msg),
-                    "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
+                    "{\"device1\":%d,\"device2\":%d,\"device3\":%d}",
                     led_controller_get_state(0),
                     led_controller_get_state(1),
                     led_controller_get_state(2));
@@ -147,7 +147,7 @@ static void on_mqtt_connected(void)
 
 /**
  * @brief MQTT message received callback
- * Handles JSON messages on device topic: {"led1":0/1, "led2":0/1, "led3":0/1}
+ * Handles JSON messages on device topic: {"device1":0/1, "device2":0/1, "device3":0/1}
  */
 static void on_mqtt_message(const char *topic, const char *data, int data_len)
 {
@@ -165,17 +165,17 @@ static void on_mqtt_message(const char *topic, const char *data, int data_len)
             s_processing_mqtt_message = true;
             ESP_LOGI(TAG, "Processing command from %s (rebound flag set)", expected_device_topic);
             
-            // Parse JSON: {"led1":0/1, "led2":0/1, "led3":0/1}
+            // Parse JSON: {"device1":0/1, "device2":0/1, "device3":0/1}
             char json_buf[256] = {0};
             int copy_len = (data_len < (int)sizeof(json_buf) - 1) ? data_len : (int)sizeof(json_buf) - 1;
             memcpy(json_buf, data, copy_len);
             json_buf[copy_len] = '\0';
             
-            // Simple JSON parsing for led1, led2, led3
+            // Simple JSON parsing for device1, device2, device3
             char *ptr = json_buf;
             for (int led_id = 0; led_id < 3; led_id++) {
                 char led_key[16];
-                snprintf(led_key, sizeof(led_key), "\"led%d\":", led_id + 1);
+                snprintf(led_key, sizeof(led_key), "\"device%d\":", led_id + 1);
                 
                 char *led_pos = strstr(ptr, led_key);
                 if (led_pos) {
@@ -226,7 +226,7 @@ static void device_report_task(void *arg)
             if (room_id && strlen(room_id) > 0) {
                 // Build device message
                 snprintf(device_msg, sizeof(device_msg),
-                        "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
+                        "{\"device1\":%d,\"device2\":%d,\"device3\":%d}",
                         led_controller_get_state(0),
                         led_controller_get_state(1),
                         led_controller_get_state(2));
