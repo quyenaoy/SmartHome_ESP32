@@ -230,6 +230,26 @@ esp_err_t mqtt_app_subscribe_device_topic(const char *room_id, int qos)
     return mqtt_app_subscribe(topic, qos);
 }
 
+// Publish device data (LED states) vào topic: {roomId}/device
+esp_err_t mqtt_app_publish_device_topic(const char *room_id, const char *data, int qos, int retain)
+{
+    if (room_id == NULL || strlen(room_id) == 0) {
+        ESP_LOGE(TAG, "Invalid room_id for device publish");
+        return ESP_FAIL;
+    }
+    
+    // Build topic: {roomId}/device
+    char topic[128] = {0};
+    int len = snprintf(topic, sizeof(topic), "%s/device", room_id);
+    if (len < 0 || len >= (int)sizeof(topic)) {
+        ESP_LOGE(TAG, "Topic name too long");
+        return ESP_FAIL;
+    }
+    
+    ESP_LOGI(TAG, "Publishing to device topic: %s", topic);
+    return mqtt_app_publish(topic, data, qos, retain);
+}
+
 // Publish status vào topic có tên: {roomId}/status
 esp_err_t mqtt_app_publish_status_topic(const char *room_id, const char *data, int qos, int retain)
 {

@@ -71,16 +71,19 @@ static void on_led_state_changed(int led_id, bool state)
 
     // Only publish if NOT processing MQTT message (avoid echo loop)
     if (!s_processing_mqtt_message && mqtt_app_is_connected()) {
-        char device_msg[128];
-        snprintf(device_msg, sizeof(device_msg),
-                "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
-                led_controller_get_state(0),
-                led_controller_get_state(1),
-                led_controller_get_state(2));
-        mqtt_app_publish(MQTT_TOPIC_DEVICE, device_msg, MQTT_QOS, 0);
-        ESP_LOGI(TAG, "Device state published on LED change: %s", device_msg);
+        const char *room_id = wifi_manager_get_room_id();
+        if (room_id && strlen(room_id) > 0) {
+            char device_msg[128];
+            snprintf(device_msg, sizeof(device_msg),
+                    "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
+                    led_controller_get_state(0),
+                    led_controller_get_state(1),
+                    led_controller_get_state(2));
+            mqtt_app_publish_device_topic(room_id, device_msg, MQTT_QOS, 0);
+            ESP_LOGI(TAG, "LED state published to %s/device: %s", room_id, device_msg);
+        }
     } else if (s_processing_mqtt_message) {
-        ESP_LOGD(TAG, "Skipping publish (processing MQTT message)");
+        ESP_LOGD(TAG, "Skipping publish (processing MQTT message - rebound prevention)");
     }
 }
 
@@ -103,25 +106,36 @@ static void on_dht11_reading(float temperature, float humidity)
     ESP_LOGI(TAG, "DHT11 - Temperature: %.1f°C, Humidity: %.1f%%", 
             temperature, humidity);
     
-    // Publish sensor data to MQTT as JSON
+    // Publish sensor data to MQTT as JSON to {roomId}/status
     if (mqtt_app_is_connected()) {
-        char status_msg[128];
-        snprintf(status_msg, sizeof(status_msg),
-                "{\"temperature\":%.1f,\"humidity\":%.1f}",
-                temperature, humidity);
-        mqtt_app_publish(MQTT_TOPIC_STATUS, status_msg, MQTT_QOS, 0);
-        ESP_LOGI(TAG, "Sensor status published: %s", status_msg);
+        const char *room_id = wifi_manager_get_room_id();
+        if (room_id && strlen(room_id) > 0) {
+            char status_msg[128];
+            snprintf(status_msg, sizeof(status_msg),
+                    "{\"temperature\":%.1f,\"humidity\":%.1f}",
+                    temperature, humidity);
+            mqtt_app_publish_status_topic(room_id, status_msg, MQTT_QOS, 0);
+            ESP_LOGI(TAG, "Sensor data published to %s/status: %s", room_id, status_msg);
+        }
     }
 }
 
 /**
- * @brief Subscribe to all MQTT topics
+ * @brief Subscribe to all MQTT topics based on roomId
  */
 static void subscribe_to_topics(void)
 {
     if (mqtt_app_is_connected()) {
-        ESP_LOGI(TAG, "Subscribing to MQTT topics...");
-        mqtt_app_subscribe(MQTT_TOPIC_DEVICE, MQTT_QOS);
+        // Lấy roomId để tạo topic: {roomId}/device
+        const char *room_id = wifi_manager_get_room_id();
+        if (room_id && strlen(room_id) > 0) {
+            mqtt_app_subscribe_device_topic(room_id, MQTT_QOS);
+            ESP_LOGI(TAG, "Subscribed to device topic with roomId=%s", room_id);
+        } else {
+            ESP_LOGW(TAG, "No valid room_id, cannot subscribe to device topic");
+        }
+    } else {
+        ESP_LOGW(TAG, "MQTT not connected, skipping subscription");
     }
 }
 
@@ -139,49 +153,60 @@ static void on_mqtt_message(const char *topic, const char *data, int data_len)
 {
     ESP_LOGI(TAG, "MQTT Message - Topic: %s, Data: %.*s (len=%d)", topic, data_len, data, data_len);
     
-    // Handle device control commands (JSON format)
-    if (strcmp(topic, MQTT_TOPIC_DEVICE) == 0) {
-        // Set flag to prevent echo loop
-        s_processing_mqtt_message = true;
+    // Build expected device topic: {roomId}/device
+    const char *room_id = wifi_manager_get_room_id();
+    if (room_id && strlen(room_id) > 0) {
+        char expected_device_topic[128] = {0};
+        snprintf(expected_device_topic, sizeof(expected_device_topic), "%s/device", room_id);
         
-        // Parse JSON: {"led1":0/1, "led2":0/1, "led3":0/1}
-        char json_buf[256] = {0};
-        int copy_len = (data_len < (int)sizeof(json_buf) - 1) ? data_len : (int)sizeof(json_buf) - 1;
-        memcpy(json_buf, data, copy_len);
-        json_buf[copy_len] = '\0';
-        
-        // Simple JSON parsing for led1, led2, led3
-        char *ptr = json_buf;
-        for (int led_id = 0; led_id < 3; led_id++) {
-            char led_key[16];
-            snprintf(led_key, sizeof(led_key), "\"led%d\":", led_id + 1);
+        // Handle device control commands on {roomId}/device (JSON format)
+        if (strcmp(topic, expected_device_topic) == 0) {
+            // Set flag to prevent echo loop (rebound prevention)
+            s_processing_mqtt_message = true;
+            ESP_LOGI(TAG, "Processing command from %s (rebound flag set)", expected_device_topic);
             
-            char *led_pos = strstr(ptr, led_key);
-            if (led_pos) {
-                led_pos += strlen(led_key);
-                // Skip whitespace
-                while (*led_pos == ' ' || *led_pos == '\t') led_pos++;
+            // Parse JSON: {"led1":0/1, "led2":0/1, "led3":0/1}
+            char json_buf[256] = {0};
+            int copy_len = (data_len < (int)sizeof(json_buf) - 1) ? data_len : (int)sizeof(json_buf) - 1;
+            memcpy(json_buf, data, copy_len);
+            json_buf[copy_len] = '\0';
+            
+            // Simple JSON parsing for led1, led2, led3
+            char *ptr = json_buf;
+            for (int led_id = 0; led_id < 3; led_id++) {
+                char led_key[16];
+                snprintf(led_key, sizeof(led_key), "\"led%d\":", led_id + 1);
                 
-                int target_state = (*led_pos == '1') ? 1 : 0;
-                int current_state = led_controller_get_state(led_id);
-                
-                // Only change if different to avoid unnecessary operations
-                if (target_state != current_state) {
-                    if (target_state) {
-                        ESP_LOGI(TAG, "MQTT: Turning ON LED %d", led_id + 1);
-                        led_controller_turn_on(led_id);
-                    } else {
-                        ESP_LOGI(TAG, "MQTT: Turning OFF LED %d", led_id + 1);
-                        led_controller_turn_off(led_id);
+                char *led_pos = strstr(ptr, led_key);
+                if (led_pos) {
+                    led_pos += strlen(led_key);
+                    // Skip whitespace
+                    while (*led_pos == ' ' || *led_pos == '\t') led_pos++;
+                    
+                    int target_state = (*led_pos == '1') ? 1 : 0;
+                    int current_state = led_controller_get_state(led_id);
+                    
+                    // Only change if different to avoid unnecessary operations
+                    if (target_state != current_state) {
+                        if (target_state) {
+                            ESP_LOGI(TAG, "MQTT: Turning ON LED %d", led_id + 1);
+                            led_controller_turn_on(led_id);
+                        } else {
+                            ESP_LOGI(TAG, "MQTT: Turning OFF LED %d", led_id + 1);
+                            led_controller_turn_off(led_id);
+                        }
                     }
                 }
             }
+            
+            // Clear flag after processing
+            s_processing_mqtt_message = false;
+            ESP_LOGI(TAG, "Command processing complete (rebound flag cleared)");
+        } else {
+            ESP_LOGW(TAG, "Message received on unknown topic: %s (expected: %s)", topic, expected_device_topic);
         }
-        
-        // Clear flag after processing
-        s_processing_mqtt_message = false;
     } else {
-        ESP_LOGW(TAG, "Message received on unknown topic: %s", topic);
+        ESP_LOGE(TAG, "No valid room_id, cannot process MQTT message");
     }
 }
 
@@ -197,15 +222,18 @@ static void device_report_task(void *arg)
         vTaskDelay(pdMS_TO_TICKS(120000));
         
         if (mqtt_app_is_connected()) {
-            // Build device message
-            snprintf(device_msg, sizeof(device_msg),
-                    "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
-                    led_controller_get_state(0),
-                    led_controller_get_state(1),
-                    led_controller_get_state(2));
-            
-            mqtt_app_publish(MQTT_TOPIC_DEVICE, device_msg, MQTT_QOS, 0);
-            ESP_LOGI(TAG, "Device state periodic publish: %s", device_msg);
+            const char *room_id = wifi_manager_get_room_id();
+            if (room_id && strlen(room_id) > 0) {
+                // Build device message
+                snprintf(device_msg, sizeof(device_msg),
+                        "{\"led1\":%d,\"led2\":%d,\"led3\":%d}",
+                        led_controller_get_state(0),
+                        led_controller_get_state(1),
+                        led_controller_get_state(2));
+                
+                mqtt_app_publish_device_topic(room_id, device_msg, MQTT_QOS, 0);
+                ESP_LOGI(TAG, "Periodic LED state published to %s/device: %s", room_id, device_msg);
+            }
         }
     }
 }

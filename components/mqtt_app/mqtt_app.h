@@ -84,6 +84,18 @@ esp_err_t mqtt_app_publish(const char *topic, const char *data, int qos, int ret
 esp_err_t mqtt_app_subscribe_device_topic(const char *room_id, int qos);
 
 /**
+ * @brief Publish device data (LED states) to topic based on roomId
+ * Topic: {roomId}/device
+ * 
+ * @param room_id Room identifier
+ * @param data JSON data to publish (e.g., LED states)
+ * @param qos QoS level (0, 1, or 2)
+ * @param retain Retain flag
+ * @return esp_err_t ESP_OK on success
+ */
+esp_err_t mqtt_app_publish_device_topic(const char *room_id, const char *data, int qos, int retain);
+
+/**
  * @brief Publish status to topic based on roomId
  * Topic: {roomId}/status
  * 
