@@ -74,6 +74,28 @@ esp_err_t mqtt_app_subscribe(const char *topic, int qos);
 esp_err_t mqtt_app_publish(const char *topic, const char *data, int qos, int retain);
 
 /**
+ * @brief Subscribe to device command topic based on roomId
+ * Topic: {roomId}/device
+ * 
+ * @param room_id Room identifier
+ * @param qos QoS level (0, 1, or 2)
+ * @return esp_err_t ESP_OK on success
+ */
+esp_err_t mqtt_app_subscribe_device_topic(const char *room_id, int qos);
+
+/**
+ * @brief Publish status to topic based on roomId
+ * Topic: {roomId}/status
+ * 
+ * @param room_id Room identifier
+ * @param data JSON data to publish
+ * @param qos QoS level (0, 1, or 2)
+ * @param retain Retain flag
+ * @return esp_err_t ESP_OK on success
+ */
+esp_err_t mqtt_app_publish_status_topic(const char *room_id, const char *data, int qos, int retain);
+
+/**
  * @brief Check if MQTT is connected
  * 
  * @return true if connected

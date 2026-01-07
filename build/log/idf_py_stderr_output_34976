@@ -1,0 +1,44 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_monitor\__main__.py", line 1, in <module>
+    from esp_idf_monitor.idf_monitor import main
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_monitor\idf_monitor.py", line 40, in <module>
+    from esp_idf_monitor.base.argument_parser import get_parser
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_monitor\base\argument_parser.py", line 11, in <module>
+    from .coredump import COREDUMP_DECODE_DISABLE, COREDUMP_DECODE_INFO
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_monitor\base\coredump.py", line 11, in <module>
+    from .logger import Logger  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_monitor\base\logger.py", line 8, in <module>
+    from esp_idf_panic_decoder import PcAddressDecoder
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_panic_decoder\__init__.py", line 1, in <module>
+    from esp_idf_panic_decoder.pc_address_decoder import PcAddressDecoder  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_panic_decoder\pc_address_decoder.py", line 8, in <module>
+    from .pc_address_matcher import PcAddressMatcher
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\esp_idf_panic_decoder\pc_address_matcher.py", line 5, in <module>
+    from elftools.elf.elffile import ELFFile
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\elftools\elf\elffile.py", line 16, in <module>
+    from ..common.utils import struct_parse, elf_assert
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\elftools\common\utils.py", line 11, in <module>
+    from ..construct import ConstructError, ULInt8
+  File "D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Lib\site-packages\elftools\construct\__init__.py", line 33, in <module>
+    from .core import *
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py", line 11, in <module>
+    sys.exit(subprocess.run([sys.executable, '-m', 'esp_idf_monitor'] + sys.argv[1:]).returncode)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "subprocess.py", line 550, in run
+  File "subprocess.py", line 1199, in communicate
+  File "subprocess.py", line 1262, in wait
+  File "subprocess.py", line 1543, in _wait
+KeyboardInterrupt

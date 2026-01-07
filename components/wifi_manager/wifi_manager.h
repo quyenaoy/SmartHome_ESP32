@@ -50,6 +50,13 @@ esp_err_t wifi_manager_stop(void);
  */
 bool wifi_manager_is_connected(void);
 
+/**
+ * @brief Get stored Room ID
+ * 
+ * @return const char* Room ID string (empty if not set)
+ */
+const char* wifi_manager_get_room_id(void);
+
 #ifdef __cplusplus
 }
 #endif

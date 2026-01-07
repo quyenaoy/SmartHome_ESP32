@@ -1,0 +1,17 @@
+#pragma once
+
+static const char WIFI_PORTAL_HTML[] =
+"<!DOCTYPE html>"
+"<html><head>"
+"<meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>ESP32 Setup</title>"
+"<style>body{font-family:Arial,sans-serif;margin:20px;background:#f5f5f5}container{max-width:600px;margin:0 auto;background:white;padding:20px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}h1{color:#333;border-bottom:2px solid #2dd4bf;padding-bottom:10px}h2{color:#555;margin-top:20px}code{background:#f0f0f0;padding:2px 6px;border-radius:4px;font-family:monospace}pre{background:#f0f0f0;padding:10px;border-radius:4px;overflow-x:auto}.method{color:#2dd4bf;font-weight:bold}.endpoint{background:#f9f9f9;padding:10px;border-left:4px solid #2dd4bf;margin:10px 0}ul li{margin:8px 0}</style>"
+"</head><body>"
+"<div class='container'><h1>ESP32 WiFi Setup API</h1><p>Send JSON to the endpoint below.</p>"
+"<h2>Endpoint</h2><div class='endpoint'><p><span class='method'>POST</span> <code>http://192.168.4.1/configure</code></p>"
+"<p><strong>Content-Type:</strong> application/json</p></div>"
+"<h2>JSON Body</h2><pre>{\n  \"ssid\": \"MyWiFi\",\n  \"password\": \"pass123\",\n  \"roomId\": \"room01\"\n}</pre>"
+"<h2>Parameters</h2><ul><li><code>ssid</code> - WiFi SSID (required, max 31)</li><li><code>password</code> - WiFi password (max 63)</li>"
+"<li><code>roomId</code> - Room identifier (required, max 31)</li></ul>"
+"<h2>Example (curl)</h2><pre>curl -X POST http://192.168.4.1/configure \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"ssid\":\"MyWiFi\",\"password\":\"pass123\",\"roomId\":\"room01\"}'</pre>"
+"<h2>Response (JSON)</h2><ul><li><strong>Success:</strong> {\"success\":true,\"message\":\"...\"}</li><li><strong>Error:</strong> {\"success\":false,\"message\":\"...\"}</li></ul>"
+"</div></body></html>";

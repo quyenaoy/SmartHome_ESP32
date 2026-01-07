@@ -17,8 +17,8 @@
 #define MQTT_QOS            1
 
 // MQTT Topics
-#define MQTT_TOPIC_DEVICE       "home/room1/device"    // LED states (JSON)
-#define MQTT_TOPIC_STATUS       "home/room1/status"    // DHT11 sensor data (JSON)
+#define MQTT_TOPIC_DEVICE       "home1/room1/device"    // LED states (JSON)
+#define MQTT_TOPIC_STATUS       "home1/room1/status"    // DHT11 sensor data (JSON)
 
 // MQTT Commands
 #define MQTT_CMD_ON         "ON"

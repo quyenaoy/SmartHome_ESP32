@@ -1,0 +1,243 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+OWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x17 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6380
+ho 0 tail 12 room 4
+load:0x40078000,len:15916
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (28) boot: ESP-IDF v5.5.1-dirty 2nd stage bootloader[0m
+[0;32mI (28) boot: compile time Jan  3 2026 23:15:03[0m
+[0;32mI (29) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v1.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (48) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (70) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=345a0h (214432) map[0m
+[0;32mI (161) esp_image: segment 1: paddr=000445c8 vaddr=3ffb0000 size=03f1ch ( 16156) load[0m
+[0;32mI (167) esp_image: segment 2: paddr=000484ec vaddr=40080000 size=07b2ch ( 31532) load[0m
+[0;32mI (180) esp_image: segment 3: paddr=00050020 vaddr=400d0020 size=a9404h (693252) map[0m
+[0;32mI (417) esp_image: segment 4: paddr=000f942c vaddr=40087b2c size=10754h ( 67412) load[0m
+[0;32mI (443) esp_image: segment 5: paddr=00109b88 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (455) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (455) boot: Disabling RNG early entropy source...[0m
+[0;32mI (466) cpu_start: Multicore app[0m
+[0;32mI (474) cpu_start: Pro cpu start user code[0m
+[0;32mI (474) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (474) app_init: Application information:[0m
+[0;32mI (474) app_init: Project name:     smart_home[0m
+[0;32mI (478) app_init: App version:      fda51bb-dirty[0m
+[0;32mI (483) app_init: Compile time:     Jan  4 2026 21:26:01[0m
+[0;32mI (488) app_init: ELF file SHA256:  12b886e53...[0m
+[0;32mI (492) app_init: ESP-IDF:          v5.5.1-dirty[0m
+[0;32mI (497) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (500) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (504) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (509) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (515) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (520) heap_init: At 3FFB8778 len 00027888 (158 KiB): DRAM[0m
+[0;32mI (525) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (530) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (536) heap_init: At 40098280 len 00007D80 (31 KiB): IRAM[0m
+[0;32mI (543) spi_flash: detected chip: generic[0m
+[0;32mI (545) spi_flash: flash io: dio[0m
+[0;33mW (548) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (561) main_task: Started on CPU0[0m
+[0;32mI (571) main_task: Calling app_main()[0m
+[0;32mI (571) SmartHome: ==========================================================[0m
+[0;32mI (571) SmartHome:         Smart Home Light Switch - ESP32[0m
+[0;32mI (571) SmartHome: ==========================================================[0m
+[0;32mI (621) SmartHome: Initializing LED Controller...[0m
+[0;32mI (621) LED_Controller: LED 0 initialized on GPIO 25[0m
+[0;32mI (621) LED_Controller: LED 1 initialized on GPIO 26[0m
+[0;32mI (631) LED_Controller: LED 2 initialized on GPIO 27[0m
+[0;32mI (631) LED_Controller: LED controller initialized with 3 LEDs[0m
+[0;32mI (641) SmartHome: Initializing Button Handler...[0m
+[0;32mI (641) Button_Handler: Button 0 initialized on GPIO 32[0m
+[1;31mE (651) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (651) Button_Handler: Button 1 initialized on GPIO 33[0m
+[1;31mE (661) gpio: gpio_install_isr_service(526): GPIO isr service already installed[0m
+[0;32mI (671) Button_Handler: Button 2 initialized on GPIO 13[0m
+[0;32mI (671) Button_Handler: Button handler initialized with 3 buttons (debounce: 50 ms)[0m
+[0;32mI (681) SmartHome: Initializing DHT11 Sensor...[0m
+[0;32mI (681) DHT11_Sensor: DHT11 sensor initialized on GPIO 4[0m
+[1;31mE (711) DHT11_Sensor: No response from DHT11[0m
+[0;32mI (711) DHT11_Sensor: Started periodic reading every 300000 ms[0m
+[0;32mI (711) SmartHome: Initializing MQTT App...[0m
+[0;32mI (711) MQTT_App: TLS enabled with certificate bundle[0m
+[0;32mI (711) MQTT_App: MQTT authentication enabled - Username: quyen[0m
+[0;32mI (721) MQTT_App: MQTT app initialized - Broker: mqtts://5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883, Client ID: esp32_room_01[0m
+[0;32mI (731) SmartHome: Initializing WiFi Manager (provisioning capable)...[0m
+[0;32mI (751) wifi:wifi driver task: 3ffc33f4, prio:23, stack:6656, core=0[0m
+[0;32mI (771) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (771) wifi:wifi certification version: v7.0[0m
+[0;32mI (771) wifi:config NVS flash: enabled[0m
+[0;32mI (771) wifi:config nano formatting: disabled[0m
+[0;32mI (771) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (781) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (781) wifi:Init management short buffer num: 32[0m
+[0;32mI (791) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (791) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (791) wifi:Init static rx buffer num: 10[0m
+[0;32mI (801) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (801) wifi_init: rx ba win: 6[0m
+[0;32mI (811) wifi_init: accept mbox: 6[0m
+[0;32mI (811) wifi_init: tcpip mbox: 32[0m
+[0;32mI (811) wifi_init: udp mbox: 6[0m
+[0;32mI (811) wifi_init: tcp mbox: 6[0m
+[0;32mI (821) wifi_init: tcp tx win: 5760[0m
+[0;32mI (821) wifi_init: tcp rx win: 5760[0m
+[0;32mI (821) wifi_init: tcp mss: 1440[0m
+[0;32mI (831) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (831) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (841) WiFi_Manager: Loaded WiFi credentials from NVS (SSID: Aoynehi, Room: r01)[0m
+[0;32mI (841) WiFi_Manager: Starting WiFi STA with stored credentials...[0m
+[0;32mI (851) WiFi_Manager: Configuring STA for SSID: Aoynehi (keep_portal=0)[0m
+[0;32mI (1351) phy_init: phy_version 4861,b71b5ad,Aug  5 2025,11:16:06[0m
+[0;32mI (1421) wifi:mode : sta (94:54:c5:a8:13:68)[0m
+[0;32mI (1421) wifi:enable tsf[0m
+[1;31mE (1431) wifi:sta is connecting, return error[0m
+[0;32mI (1431) WiFi_Manager: Waiting for WiFi connection or failure...[0m
+[0;32mI (1441) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1441) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (2981) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3001) wifi:Association refused temporarily time 196, comeback time 296 (TUs)[0m
+[0;32mI (3301) wifi:state: assoc -> auth (0xb0)[0m
+[0;32mI (4831) wifi:state: auth -> assoc (0x0)[0m
+[1;31mE (4841) wifi:Association refused too many times, max allowed 1[0m
+[0;32mI (4841) wifi:state: assoc -> init (0xd010)[0m
+[0;32mI (4851) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (4851) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (4851) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (4851) WiFi_Manager: Retry connecting to WiFi (1/5)...[0m
+[0;33mW (7281) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (7281) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (7281) WiFi_Manager: Retry connecting to WiFi (2/5)...[0m
+[0;32mI (7291) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (7291) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (8841) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (8851) wifi:state: assoc -> run (0x10)[0m
+[0;33mW (16431) WiFi_Manager: Connection failed or timed out, starting provisioning AP[0m
+[0;33mW (16431) WiFi_Manager: Starting provisioning AP 'ESP32-Setup' (open network)[0m
+[0;32mI (16431) wifi:state: run -> init (0x0)[0m
+[0;32mI (16441) wifi:new:<6,0>, old:<6,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (16441) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (16441) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (16451) WiFi_Manager: Retry connecting to WiFi (3/5)...[0m
+[0;32mI (16561) wifi:flush txq[0m
+[0;32mI (16561) wifi:stop sw txq[0m
+[0;32mI (16561) wifi:lmac stop hw txq[0m
+[0;32mI (16581) wifi:mode : sta (94:54:c5:a8:13:68) + softAP (94:54:c5:a8:13:69)[0m
+[0;32mI (16581) wifi:enable tsf[0m
+[0;32mI (16581) wifi:Total power save buffer number: 16[0m
+[0;32mI (16581) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (16591) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (16591) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (16601) wifi:ap channel adjust o:1,1 n:6,2[0m
+[0;32mI (16601) wifi:new:<6,0>, old:<1,1>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (16611) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (17461) WiFi_Portal: HTTP provisioning server started at http://192.168.4.1/[0m
+[0;32mI (17461) WiFi_Manager: Periodic reconnect attempt to stored WiFi: Aoynehi[0m
+[0;32mI (17461) WiFi_Manager: Configuring STA for SSID: Aoynehi (keep_portal=1)[0m
+[0;32mI (17471) WiFi_Manager: Connect to WiFi 'ESP32-Setup' and open http://192.168.4.1 to configure.[0m
+[1;31mE (17471) wifi:sta is connecting, cannot set config[0m
+[0;32mI (17481) SmartHome: MQTT will start automatically when WiFi connection is established[0m
+[0;33mW (17481) WiFi_Manager: Failed to set WiFi config: ESP_ERR_WIFI_STATE[0m
+[0;32mI (17491) SmartHome: ==========================================================[0m
+[0;32mI (17501) SmartHome:         Smart Home System Started Successfully![0m
+[0;32mI (17511) SmartHome: ==========================================================[0m
+[0;32mI (17511) SmartHome: WiFi: provisioning portal if no stored credentials (SSID: ESP32-Setup)[0m
+[0;32mI (17521) SmartHome: MQTT Broker: 5b495904868d4c9e9e07c33dde4f6274.s1.eu.hivemq.cloud:8883 (TLS: Yes)[0m
+[0;32mI (17531) SmartHome: LED GPIOs: 25, 26, 27[0m
+[0;32mI (17531) SmartHome: Button GPIOs: 32, 33, 13[0m
+[0;32mI (17541) SmartHome: DHT11 GPIO: 4[0m
+[0;32mI (17541) SmartHome: ==========================================================[0m
+[0;32mI (17551) SmartHome: Running LED test...[0m
+[0;32mI (17551) LED_Controller: Turning all LEDs on[0m
+[0;32mI (17561) LED_Controller: LED 0 turned ON (GPIO 25)[0m
+[0;32mI (17561) SmartHome: LED 0 state changed to: ON[0m
+[0;32mI (17571) LED_Controller: LED 1 turned ON (GPIO 26)[0m
+[0;32mI (18171) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (18171) SmartHome: LED 1 state changed to: ON[0m
+[0;32mI (18171) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (18171) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (18181) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (18681) LED_Controller: Turning all LEDs off[0m
+[0;32mI (18681) LED_Controller: LED 0 turned OFF (GPIO 25)[0m
+[0;32mI (18681) SmartHome: LED 0 state changed to: OFF[0m
+[0;32mI (18681) LED_Controller: LED 1 turned OFF (GPIO 26)[0m
+[0;32mI (18681) SmartHome: LED 1 state changed to: OFF[0m
+[0;32mI (18691) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (18691) SmartHome: LED 2 state changed to: OFF[0m
+[0;32mI (18701) SmartHome: System ready. Press buttons to control LEDs![0m
+[0;32mI (18701) main_task: Returned from app_main()[0m
+[0;32mI (28181) wifi:state: run -> init (0xcc00)[0m
+[0;32mI (28201) wifi:new:<6,0>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;33mW (28201) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (28201) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (28201) WiFi_Manager: Retry connecting to WiFi (4/5)...[0m
+[0;33mW (31051) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (31051) mqtt_client: Client asked to stop, but was not started[0m
+[0;32mI (31051) WiFi_Manager: Retry connecting to WiFi (5/5)...[0m
+[0;33mW (33901) SmartHome: === WiFi Disconnected ===[0m
+[0;33mW (33901) mqtt_client: Client asked to stop, but was not started[0m
+[1;31mE (33901) WiFi_Manager: Failed to connect after 5 retries, starting provisioning AP[0m
+[0;32mI (33901) WiFi_Manager: Provisioning AP already running[0m
+[0;32mI (47491) WiFi_Manager: Periodic reconnect attempt to stored WiFi: Aoynehi[0m
+[0;32mI (47491) WiFi_Manager: Configuring STA for SSID: Aoynehi (keep_portal=1)[0m
+[0;32mI (47501) wifi:new:<6,2>, old:<6,0>, ap:<6,2>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (47501) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (49051) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (49061) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (49091) wifi:connected with Aoynehi, aid = 1, channel 6, BW20, bssid = 56:cb:76:60:3e:6a[0m
+[0;32mI (49091) wifi:security: WPA3-SAE, phy: bgn, rssi: -61[0m
+[0;32mI (49101) wifi:pm start, type: 1[0m
+
+[0;32mI (49101) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (49131) wifi:AP's beacon interval = 102400 us, DTIM period = 3[0m
+[0;32mI (50621) esp_netif_handlers: sta ip: 172.20.10.9, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (50621) WiFi_Manager: Got IP: 172.20.10.9[0m
+[0;32mI (50621) WiFi_Manager: Connected while portal active, shutting portal and switching to STA[0m
+[0;32mI (50731) WiFi_Portal: HTTP server stopped[0m
+[0;32mI (50731) wifi:mode : sta (94:54:c5:a8:13:68)[0m
+[0;32mI (50741) SmartHome: === WiFi Connected Callback Triggered ===[0m
+[0;32mI (50741) SmartHome: Starting MQTT client...[0m
+[0;32mI (50741) MQTT_App: Starting MQTT client connection...[0m
+[0;32mI (50741) MQTT_App: MQTT app start command sent successfully[0m
+[0;32mI (50751) SmartHome: MQTT client started successfully[0m
+[0;32mI (50751) wifi:<ba-add>idx:0 (ifx:0, 56:cb:76:60:3e:6a), tid:0, ssn:2, winSize:64[0m
+[0;32mI (51821) esp-x509-crt-bundle: Certificate validated[0m
+[0;32mI (52751) SmartHome: Subscribing to MQTT topics...[0m
+[0;32mI (53231) MQTT_App: MQTT connected to broker[0m
+[0;32mI (53241) SmartHome: MQTT connected callback - subscribing[0m
+[0;32mI (53241) SmartHome: Subscribing to MQTT topics...[0m
+[0;32mI (53241) MQTT_App: Subscribed to topic: home1/room1/device, msg_id=13633[0m
+[0;32mI (53541) MQTT_App: MQTT subscribed, msg_id=13633[0m
+[0;32mI (57321) Button_Handler: Button 2 pressed (count: 1, GPIO: 13)[0m
+[0;32mI (57321) SmartHome: Button 2 pressed - Toggling LED 2[0m
+[0;32mI (57321) LED_Controller: LED 2 turned ON (GPIO 27)[0m
+[0;32mI (57321) SmartHome: LED 2 state changed to: ON[0m
+[0;32mI (57331) SmartHome: Device state published on LED change: {"led1":0,"led2":0,"led3":1}[0m
+[0;32mI (57851) MQTT_App: MQTT message received - Topic: home1/room1/device[0m
+[0;32mI (57851) SmartHome: MQTT Message - Topic: home1/room1/device, Data: {"led1":0,"led2":0,"led3":1} (len=28)[0m
+[0;32mI (57861) MQTT_App: MQTT published, msg_id=5482[0m
+[0;32mI (67371) MQTT_App: MQTT message received - Topic: home1/room1/device[0m
+[0;32mI (67371) SmartHome: MQTT Message - Topic: home1/room1/device, Data: {"led1":0,"led2":0,"led3":0} (len=28)[0m
+[0;32mI (67371) SmartHome: MQTT: Turning OFF LED 3[0m
+[0;32mI (67381) LED_Controller: LED 2 turned OFF (GPIO 27)[0m
+[0;32mI (67381) SmartHome: LED 2 state changed to: OFF[0m

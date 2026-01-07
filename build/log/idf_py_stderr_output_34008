@@ -1,0 +1,63 @@
+Command: D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools/idf_monitor.py -p COM3 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 D:\blubluuuu\HUST\IOT_UD\smart_home\build\smart_home.elf D:\blubluuuu\HUST\IOT_UD\smart_home\build\bootloader\bootloader.elf --force-color -m 'D:\Install\ESPIDF\Espressif\python_env\idf5.5_py3.11_env\Scripts\python.exe' 'D:\Install\ESPIDF\Espressif\frameworks\esp-idf-v5.5.1\tools\idf.py' '-p' 'COM3'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM3 instead...[0m
+[0;33m--- esp-idf-monitor 1.8.0 on \\.\COM3 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- Warning: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0;33m--- Warning: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x40088c89: [0;33mpanic_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40088c51: [0;33mesp_system_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40090ba9: [0;33mabort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x400d9615: [0;33mreconnect_task[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m102[0m
+[0m--- 0x40089909: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x40088c89: [0;33mpanic_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40088c51: [0;33mesp_system_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40090ba9: [0;33mabort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x400d9615: [0;33mreconnect_task[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m102[0m
+[0m--- 0x40089909: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x40088c89: [0;33mpanic_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40088c51: [0;33mesp_system_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40090ba9: [0;33mabort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x400d9615: [0;33mreconnect_task[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m102[0m
+[0m--- 0x40089909: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x40088c89: [0;33mpanic_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40088c51: [0;33mesp_system_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40090ba9: [0;33mabort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x400d9615: [0;33mreconnect_task[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m102[0m
+[0m--- 0x40089909: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x40088c89: [0;33mpanic_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/panic.c[0m[0m:[1;31m469[0m
+[0m--- 0x40088c51: [0;33mesp_system_abort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/port/esp_system_chip.c[0m[0m:[1;31m87[0m
+[0m--- 0x40090ba9: [0;33mabort[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/newlib/src/abort.c[0m[0m:[1;31m38[0m
+[0m--- 0x40088be3: [0;33m_esp_error_check_failed[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/esp_system/esp_err.c[0m[0m:[1;31m49[0m
+[0m--- 0x400d9553: [0;33mapply_sta_config_and_connect[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m147[0m
+[0m--- 0x400d9615: [0;33mreconnect_task[0m[0m at [0;32mD:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c[0m[0m:[1;31m102[0m
+[0m--- 0x40089909: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

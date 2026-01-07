@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "smart_home",
-    "project_version":    "dd50c01-dirty",
+    "project_version":    "fda51bb-dirty",
     "project_path":       "D:/blubluuuu/HUST/IOT_UD/smart_home",
     "idf_path":           "D:/Install/ESPIDF/Espressif/frameworks/esp-idf-v5.5.1",
     "build_dir":          "D:/blubluuuu/HUST/IOT_UD/smart_home/build",
@@ -1630,7 +1630,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "D:/blubluuuu/HUST/IOT_UD/smart_home/build/esp-idf/wifi_manager/libwifi_manager.a",
-            "sources": [ "D:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c" ],
+            "sources": [ "D:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_manager.c", "D:/blubluuuu/HUST/IOT_UD/smart_home/components/wifi_manager/wifi_portal.c" ],
             "include_dirs": [ "." ]
         },
         "wifi_provisioning": {
